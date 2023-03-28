@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace core
+namespace Networking.Core
 {
     /**
      * Simple log class which wraps Console.WriteLine and adds some utility color for output coloring and 'clumping' the output.
