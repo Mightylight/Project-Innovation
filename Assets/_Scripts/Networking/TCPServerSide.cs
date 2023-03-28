@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class TCPServerSide : MonoBehaviour
 {
+    [SerializeField] private int _playerCount = 1;
     private List<TcpMessageChannel> _channels;
     private TcpListener _listener;
 
@@ -51,7 +52,7 @@ public class TCPServerSide : MonoBehaviour
 
     private void ProcessNewClients()
     {
-        if (!_listener.Pending()) return;
+        if (!_listener.Pending() && _channels.Count < _playerCount) return;
         TcpMessageChannel channel = new TcpMessageChannel(_listener.AcceptTcpClient());
         _channels.Add(channel);
         Debug.Log("New client connected");

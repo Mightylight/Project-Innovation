@@ -29,6 +29,22 @@ public class TCPClientSide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        HandleIncomingMessages();
+    }
+
+    private void HandleIncomingMessages()
+    {
+        if (!_channel.Connected) return;
+        if (!_channel.HasMessage()) return;
+        ASerializable message = _channel.ReceiveMessage();
+        if (message is SimpleMessage)
+        {
+            HandleSimpleMessage((SimpleMessage) message);
+        }
+    }
+
+    private void HandleSimpleMessage(SimpleMessage pMessage)
+    {
+        throw new System.NotImplementedException();
     }
 }
