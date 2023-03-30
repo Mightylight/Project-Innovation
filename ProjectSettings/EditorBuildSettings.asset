@@ -5,15 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/MobileScene.unity
-    guid: 067dd41a89fdd2b43aa4e127fed9a877
-  - enabled: 0
-    path: Assets/Scenes/VRScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/_TestScene_Koen_Android_Voice.unity
-    guid: 6082d7d7012214141b49344d2b54dc7a
+    path: Assets/Scenes/_TestScene_Koen.unity
+    guid: b2899cf51930dd64e97f37045e7a38d0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8b27023a7da386e42924c90b69ca37a2,
       type: 2}

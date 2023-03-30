@@ -1,10 +1,12 @@
+#if !UNITY_ANDROID
 using System;
+
 using System.Text;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 
 
-public class KoenTest : MonoBehaviour
+public class UnitySpeechRecognizer : MonoBehaviour
 {
     [SerializeField]
     private string[] m_Keywords;
@@ -27,3 +29,4 @@ public class KoenTest : MonoBehaviour
         Debug.Log(builder.ToString());
     }
 }
+#endif
