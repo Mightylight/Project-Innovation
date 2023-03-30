@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class CleanableSurface : MonoBehaviour
 {
-    Texture2D dirtyTexture;
+    [SerializeField] Texture2D dirtyTexture;
+    [SerializeField] Texture2D interactableTexture;
     [SerializeField] Texture2D cleanTexture;
     [SerializeField] Texture2D brush;
     void Start()
     {
-        dirtyTexture = GetComponent<Renderer>().material.mainTexture as Texture2D;
+
     }
 
     // Update is called once per frame
@@ -28,7 +30,7 @@ public class CleanableSurface : MonoBehaviour
     /// <param name="dirtyObject"></param>
     public void CleanObject(Vector2 textureCoord)
     {
-        Vector2 pixelCoord = new Vector2(textureCoord.x * dirtyTexture.width, textureCoord.y * dirtyTexture.height);
+        Vector2 pixelCoord = new Vector2(textureCoord.x * interactableTexture.width, textureCoord.y * interactableTexture.height);
         Vector2Int pixelPosition = new Vector2Int(Mathf.RoundToInt(pixelCoord.x), Mathf.RoundToInt(pixelCoord.y));
 
         int startX = pixelPosition.x - Mathf.FloorToInt(brush.width / 2f);
@@ -43,21 +45,25 @@ public class CleanableSurface : MonoBehaviour
                 int pixelY = startY + y;
 
                 // Make sure the pixel is within the bounds of the texture
-                if (pixelX >= 0 && pixelX < dirtyTexture.width && pixelY >= 0 && pixelY < dirtyTexture.height)
+                if (pixelX >= 0 && pixelX < interactableTexture.width && pixelY >= 0 && pixelY < interactableTexture.height)
                 {
                     Color brushColor = brush.GetPixel(x, y);
-                    Color pixelColor = dirtyTexture.GetPixel(pixelX, pixelY);
-
+                    Color pixelColor = interactableTexture.GetPixel(pixelX, pixelY);
+                    Color cleanColor = cleanTexture.GetPixel(pixelX, pixelY);
                     // Mix the brush color with the existing pixel color
-                    Color mixedColor = Color.Lerp(pixelColor, brushColor, brushColor.a);
+                    Color mixedColor = Color.Lerp(pixelColor, cleanColor, brushColor.a);
 
                     // Set the pixel on the texture
-                    dirtyTexture.SetPixel(pixelX, pixelY, mixedColor);
+                    interactableTexture.SetPixel(pixelX, pixelY, mixedColor);
                 }
             }
         }
 
-        dirtyTexture.Apply();
+        interactableTexture.Apply();
     }
-
+    private void OnDisable()
+    {
+        interactableTexture.SetPixels(dirtyTexture.GetPixels());
+        interactableTexture.Apply();
+    }
 }
