@@ -39,8 +39,8 @@ public class NetworkGameObject : MonoBehaviour
     {
         SerializableGameObject serializableGameObject = new SerializableGameObject();
         serializableGameObject.networkObjectID = networkObjectID;
-        serializableGameObject._transformPosition = transform.localPosition;
-        serializableGameObject._transformRotation = transform.localRotation;
+        serializableGameObject._transformPosition = transform.position;
+        serializableGameObject._transformRotation = transform.rotation;
         return serializableGameObject;
     }
 

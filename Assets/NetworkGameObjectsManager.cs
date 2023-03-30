@@ -34,8 +34,13 @@ public class NetworkGameObjectsManager : MonoBehaviour
 
     private void Start()
     {
-        if (!isClient) StartCoroutine(SyncTimer());
+        //if (!isClient) StartCoroutine(SyncTimer());
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (!isClient) SendSyncObjectsRequest();
     }
 
     public void AddChangedNetworkObject(NetworkGameObject newNetworkObj)
@@ -54,6 +59,7 @@ public class NetworkGameObjectsManager : MonoBehaviour
 
     public void SendSyncObjectsRequest()
     {
+        if (changedNetworkObjects.Count == 0) return;
         SerializableGameObjectList serializableGameObjectList = new SerializableGameObjectList();
 
         serializableGameObjectList.gameObjects = new();

@@ -70,10 +70,12 @@ public class TCPServerSide : MonoBehaviour
 
     private void ProcessNewClients()
     {
-        if (!_listener.Pending() && _channels.Count < _playerCount) return;
-        TcpMessageChannel channel = new TcpMessageChannel(_listener.AcceptTcpClient());
-        _channels.Add(channel);
-        Debug.Log("New client connected");
+        if (_listener.Pending())
+        {
+            TcpMessageChannel channel = new TcpMessageChannel(_listener.AcceptTcpClient());
+            _channels.Add(channel);
+            Debug.Log("New client connected");
+        }
     }
 
     public void SendMessage(ASerializable aSerializable, int player)
