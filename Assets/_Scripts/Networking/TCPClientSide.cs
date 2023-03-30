@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Networking.Core.protocol;
+using _Scripts.Networking.protocol;
 using Networking.Core;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class TCPClientSide : MonoBehaviour
     [SerializeField] private TcpMessageChannel _channel;
     [SerializeField] private string _IPAdress;
     [SerializeField] private int _serverPort;
+    [SerializeField] private NetworkGameObjectsManager _gameObjectsManager;
     
     
     // Start is called before the first frame update
@@ -40,6 +42,10 @@ public class TCPClientSide : MonoBehaviour
         if (message is SimpleMessage)
         {
             HandleSimpleMessage((SimpleMessage) message);
+        }
+        else if(message is SerializableGameObjectList)
+        {
+            _gameObjectsManager.HandleSyncObjectsRequest((SerializableGameObjectList) message);   
         }
     }
 

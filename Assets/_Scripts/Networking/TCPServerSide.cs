@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Sockets;
 using _Scripts.Networking.Core.protocol;
 using Networking.Core;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,7 +14,24 @@ public class TCPServerSide : MonoBehaviour
     private List<TcpMessageChannel> _channels;
     private TcpListener _listener;
 
-
+    private static TCPServerSide instance;
+    public static TCPServerSide Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                Debug.LogError("TCPServerSide is null!");
+                return null;
+            }
+            return instance;
+        }
+    }
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(this.gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -56,5 +74,14 @@ public class TCPServerSide : MonoBehaviour
         TcpMessageChannel channel = new TcpMessageChannel(_listener.AcceptTcpClient());
         _channels.Add(channel);
         Debug.Log("New client connected");
+    }
+
+    public void SendMessage(ASerializable aSerializable, int player)
+    {
+        _channels[player].SendMessage(aSerializable);
+    }
+    public void SendMessageToAll(ASerializable aSerializable)
+    {
+        foreach (TcpMessageChannel channel in _channels) channel.SendMessage(aSerializable);
     }
 }
