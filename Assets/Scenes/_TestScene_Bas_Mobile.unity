@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 1021449598}
   - component: {fileID: 1021449597}
   - component: {fileID: 1021449596}
+  - component: {fileID: 1021449599}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -390,7 +391,7 @@ MonoBehaviour:
   m_MaxConnectAttempts: 60
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
-    Address: 192.168.178.252
+    Address: 192.168.1.100
     Port: 7777
     ServerListenAddress: 
   DebugSimulator:
@@ -416,12 +417,14 @@ MonoBehaviour:
     NetworkTransport: {fileID: 1021449596}
     PlayerPrefab: {fileID: 0}
     NetworkPrefabs:
-    - Override: 0
+    - Override: 1
       Prefab: {fileID: 8931389420994506881, guid: aa8ed2cd29705ea4e87ad66945967800,
         type: 3}
-      SourcePrefabToOverride: {fileID: 0}
+      SourcePrefabToOverride: {fileID: 8931389420994506881, guid: aa8ed2cd29705ea4e87ad66945967800,
+        type: 3}
       SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
+      OverridingTargetPrefab: {fileID: 4420523968615183198, guid: 8f3b9c829ceb86449b0652f6aa03994d,
+        type: 3}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
@@ -429,7 +432,7 @@ MonoBehaviour:
     EnableTimeResync: 0
     TimeResyncInterval: 30
     EnsureNetworkVariableLengthSafety: 0
-    EnableSceneManagement: 1
+    EnableSceneManagement: 0
     ForceSamePrefabs: 1
     RecycleNetworkIds: 1
     NetworkIdRecycleDelay: 120
@@ -444,12 +447,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021449594}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af49600fa82c8148a62082a6f3eb99d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _networkManager: {fileID: 1021449597}
+--- !u!114 &1021449599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021449594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd8762a749798554098c8f68e4017491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2133750444
 GameObject:
   m_ObjectHideFlags: 0

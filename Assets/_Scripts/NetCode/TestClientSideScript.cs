@@ -10,7 +10,7 @@ namespace _Scripts.NetCode
         private void Start()
         {
             Debug.Log("Starting client");
-            _networkManager.StartClient();
+            NetworkManager.Singleton.StartClient();
         }
     }
 }

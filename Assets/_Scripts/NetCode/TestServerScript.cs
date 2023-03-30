@@ -14,12 +14,13 @@ namespace _Scripts.NetCode
         private void Start()
         {
             Debug.Log("Starting server");
-            _networkManager.StartHost();
-            _networkManager.OnClientConnectedCallback += OnClientConnected;
+            NetworkManager.Singleton.StartServer();
+            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
         }
 
         private void OnClientConnected(ulong pObj)
         {
+            Debug.Log($"Client connected!");
             _serverPlayerSpawner.GetComponent<NetworkObject>().Spawn(true);
         }
     }
