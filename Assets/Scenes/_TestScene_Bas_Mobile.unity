@@ -219,7 +219,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &962133225
 GameObject:
@@ -369,7 +369,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1021449596
 MonoBehaviour:
@@ -420,10 +420,16 @@ MonoBehaviour:
     - Override: 1
       Prefab: {fileID: 8931389420994506881, guid: aa8ed2cd29705ea4e87ad66945967800,
         type: 3}
-      SourcePrefabToOverride: {fileID: 8931389420994506881, guid: aa8ed2cd29705ea4e87ad66945967800,
+      SourcePrefabToOverride: {fileID: 8499307824198269429, guid: 3bcf256bcaff1c540b22d36625ab60b5,
         type: 3}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 4420523968615183198, guid: 8f3b9c829ceb86449b0652f6aa03994d,
+      SourceHashToOverride: 720455222
+      OverridingTargetPrefab: {fileID: 8289524728563268343, guid: 02f37575a4ab4b144b19249313a57eda,
+        type: 3}
+    - Override: 2
+      Prefab: {fileID: 0}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 3283725061
+      OverridingTargetPrefab: {fileID: 8289524728563268343, guid: 054637669728ed54db4e64ac9d0e0ea3,
         type: 3}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
