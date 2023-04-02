@@ -506,7 +506,7 @@ Transform:
   m_GameObject: {fileID: 154351108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1115,6 +1115,14 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 3283725061
       OverridingTargetPrefab: {fileID: 8289524728563268343, guid: 054637669728ed54db4e64ac9d0e0ea3,
+        type: 3}
+    - Override: 0
+      Prefab: {fileID: 2778211476330835999, guid: 16efa69eefc3c0444895becee5da88c3,
+        type: 3}
+      SourcePrefabToOverride: {fileID: 2778211476330835999, guid: 16efa69eefc3c0444895becee5da88c3,
+        type: 3}
+      SourceHashToOverride: 2354653638
+      OverridingTargetPrefab: {fileID: 2778211476330835999, guid: 16efa69eefc3c0444895becee5da88c3,
         type: 3}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
