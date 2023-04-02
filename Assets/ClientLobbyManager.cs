@@ -18,6 +18,7 @@ public class ClientLobbyManager : MonoBehaviour
     public void Start()
     {
         ipInputField.text = defaultIP;
+        NetworkManager.Singleton.OnClientConnectedCallback += OnServerJoined;
     }
 
     public void JoinServer()
@@ -29,5 +30,11 @@ public class ClientLobbyManager : MonoBehaviour
         NetworkManager.Singleton.StartClient();
         joinButton.interactable = false;
         userFeedbackTextobj.text = "Trying to join...";
+    }
+
+    public void OnServerJoined(ulong clientID)
+    {
+        Debug.Log("Succesfully connected with the server!");
+        this.gameObject.SetActive(false);
     }
 }
