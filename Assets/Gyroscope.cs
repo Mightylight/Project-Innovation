@@ -10,10 +10,8 @@ public class Gyroscope : MonoBehaviour
     private void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
- 
-        _gyroControl = new GameObject("Gyro Control");
-        _gyroControl.transform.position = transform.position; 
-        transform.SetParent(_gyroControl.transform); //parents the object to an empty control object
+
+        _gyroControl = this.gameObject;
         _gyroEnabled = EnableGyro();
     }
     private bool EnableGyro()

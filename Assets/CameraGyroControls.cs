@@ -12,12 +12,13 @@ public class CameraGyroControls : MonoBehaviour
 
     void Start()
     {
-        offset = transform.rotation * Quaternion.Inverse(GyroToUnity(Input.gyro.attitude));
+        offset = transform.localRotation * Quaternion.Inverse(GyroToUnity(Input.gyro.attitude));
     }
 
     void Update()
     {
-        transform.rotation = offset * GyroToUnity(Input.gyro.attitude);
+        transform.localRotation = offset * GyroToUnity(Input.gyro.attitude);
+        Debug.Log(Input.gyro.attitude);
     }
     private static Quaternion GyroToUnity(Quaternion q)
     {

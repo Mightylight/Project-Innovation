@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17ed42929aee5b46867f30c2c9bfbd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  androidCameraPrefab: {fileID: 2449728121503756138, guid: efefa34c8bec69b41b73fcf603fa2b41,
+    type: 3}
 --- !u!1 &4183684085610184266
 GameObject:
   m_ObjectHideFlags: 0

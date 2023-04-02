@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class AndroidEyeController : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject androidCameraPrefab;
 
-    void Update()
+    public void Init()
     {
-        if (Input.GetKeyDown(KeyCode.K)) transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
+        //Note that we don't actually move the camera around, but instead move the "eye" gameobject with the camera as child
+        gameObject.AddComponent<CameraGyroControls>();
+        //gameObject.AddComponent<AndroidCameraController>();//TODO: Create android camera controller, that can be used if gyroscope is disabled!
+        Instantiate(androidCameraPrefab, transform);//Add the camera ment for the android, as child.
+
     }
 }
