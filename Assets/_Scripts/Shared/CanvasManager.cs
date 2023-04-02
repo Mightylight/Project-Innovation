@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
 
     [SerializeField] GameObject phoneConsole;
+    public Button fixButton;
 
     private static CanvasManager instance;
     public static CanvasManager Instance

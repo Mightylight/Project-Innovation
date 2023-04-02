@@ -1,27 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraGyroControls : MonoBehaviour
 {
     Quaternion offset;
     Quaternion original;
-    void Awake()
-    {
-        Input.gyro.enabled = true;
-        original = transform.localRotation;
-    }
-
+    private UnityEngine.Gyroscope _gyro;
     void Start()
     {
-        ResetOffset();
-        //offset = transform.localRotation * Quaternion.Inverse(GyroToUnity(Input.gyro.attitude));
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        original = transform.rotation;
+        EnableGyro();
+        CanvasManager.Instance.fixButton.onClick.AddListener(() => EnableGyro());
     }
+
+    public void EnableGyro()
+    {
+        if (!SystemInfo.supportsGyroscope) return;
+
+        _gyro = Input.gyro;
+        _gyro.enabled = true;
+        ResetOffset();
+    }
+
+    public void DisableGyro()
+    {
+        _gyro.enabled = false;
+    }
+
+
+    //void Start()
+    //{
+    //    //ResetOffset();
+    //    //offset = transform.localRotation * Quaternion.Inverse(GyroToUnity(Input.gyro.attitude));
+    //}
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V)) ResetOffset();
-        transform.localRotation = offset * GyroToUnity(Input.gyro.attitude);
+        //if(!_gyroEnabled) return;
+        //if (Input.GetKeyDown(KeyCode.V)) ResetOffset();
+        transform.rotation = offset * GyroToUnity(_gyro.attitude);
+        //transform.rotation = new Quaternion(transform.rotation.x + 10, 10, 10, 1);
+        //CanvasManager.Instance.PhoneConsoleMessage($"{_gyro.attitude}");
     }
     private static Quaternion GyroToUnity(Quaternion q)
     {
@@ -30,8 +49,9 @@ public class CameraGyroControls : MonoBehaviour
 
     public void ResetOffset()
     {
-        transform.localRotation = original;
-        offset = transform.localRotation * Quaternion.Inverse(GyroToUnity(Input.gyro.attitude));
+        transform.rotation = original;
+        offset = transform.rotation * Quaternion.Inverse(GyroToUnity(_gyro.attitude));
         Debug.Log("Gyro offset has been reset!");
+        CanvasManager.Instance.PhoneConsoleMessage($"Gyro offset has been reset!{offset}");
     }
 }
