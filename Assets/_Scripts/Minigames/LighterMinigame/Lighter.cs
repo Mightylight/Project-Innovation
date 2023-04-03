@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Lighter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool isLit = true;
+    
+    public void Light()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        isLit = true;
+        // Light the match
     }
 }

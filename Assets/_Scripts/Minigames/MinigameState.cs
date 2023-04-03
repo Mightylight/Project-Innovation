@@ -1,18 +1,15 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class MinigameState : MonoBehaviour
+namespace _Scripts.Minigames
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class MinigameState : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField] public GameObject hintPosition;
+        [SerializeField] private float _timeInSeconds;
+        public abstract void OnStateEnter();
+        public abstract void OnStateExit();
     }
 }

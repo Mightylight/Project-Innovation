@@ -1,18 +1,52 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Netcode;
 using UnityEngine;
 
-public class LighterMinigameLogic : MonoBehaviour
+namespace _Scripts.Minigames.LighterMinigame
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LighterMinigameLogic : MonoBehaviour
     {
+        [SerializeField] private Lighter _lighter;
+        [SerializeField] private List<Candle> _candles = new List<Candle>();
+        private List<Candle> _litCandles = new List<Candle>();
         
-    }
+        
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        public void OnCandleLit(Candle pCandle)
+        {
+            if (NetworkManager.Singleton.IsClient) return;
+            if(!_lighter.isLit) return;
+            if (_litCandles.Contains(pCandle)) return;
+            
+            _litCandles.Add(pCandle);
+            pCandle.LightCandle();
+
+            if (_litCandles.Count == _candles.Count)
+            {
+                CheckCandles();
+            }
+        }
+
+        private void CheckCandles()
+        {
+            if (_candles.Where((pCandle, i) => _litCandles[i] != pCandle).Any())
+            {
+                ResetCandles();
+                return;
+            }
+
+            //MinigameFSM.Instance.NextState();
+            Debug.Log("Correct!");
+        }
+
+        private void ResetCandles()
+        {
+            foreach (Candle candle in _candles)
+            {
+                candle.ResetCandle();
+            }
+        }
     }
 }
