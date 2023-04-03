@@ -10,18 +10,14 @@ public class CleanableSurface : MonoBehaviour
     [SerializeField] Texture2D interactableTexture;
     [SerializeField] Texture2D cleanTexture;
     [SerializeField] Texture2D brush;
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
-    void Update()
-    {
-        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit raycast);
-        if (raycast.collider == null) return;
-        CleanObject(raycast.textureCoord);
-    }
+    //void Update()
+    //{
+    //    Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit raycast);
+    //    if (raycast.collider == null) return;
+    //    CleanObject(raycast.textureCoord);
+    //}
 
 
     /// <summary>
