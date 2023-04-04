@@ -23,7 +23,7 @@ public class AndroidPlayerManager : MonoBehaviour
     public void InitializeAndroidPlayerObject(ulong clientID)
     {
         GameObject obj = Instantiate(androidPlayerObjectPrefab, androidPlayerSpawnPos.position,androidPlayerSpawnPos.rotation);
-        obj.GetComponent<NetworkObject>().Spawn();
+        obj.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientID);
         obj.GetComponent<AndroidPlayerObjectManager>().InitializeAndroidPlayerEye(clientID);
 
         //ClientRpcParams clientRpcParams = new ClientRpcParams

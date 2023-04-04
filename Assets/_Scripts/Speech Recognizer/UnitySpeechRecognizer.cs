@@ -18,7 +18,6 @@ public class UnitySpeechRecognizer : MonoBehaviour
 
     void Start()
     {
-
         keywordValues = new string[keywords.Length];
         for (int i = 0; i < keywords.Length; i++)
         {
