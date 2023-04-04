@@ -1,6 +1,5 @@
-#if !UNITY_ANDROID
 using System;
-
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
@@ -10,19 +9,32 @@ using UnityEngine.Windows.Speech;
 public class UnitySpeechRecognizer : MonoBehaviour
 {
     [SerializeField]
-    private string[] m_Keywords;
-
+    //private string[] m_Keywords;
+    private SpeechKeyword[] keywords;
+    string[] keywordValues;
     private KeywordRecognizer m_Recognizer;
+    Dictionary<string, SpeechKeyword> keywordDict = new();
+
 
     void Start()
     {
-        m_Recognizer = new KeywordRecognizer(m_Keywords, ConfidenceLevel.Low);
+
+        keywordValues = new string[keywords.Length];
+        for (int i = 0; i < keywords.Length; i++)
+        {
+            keywordValues[i] = keywords[i].keyword;
+            keywordDict.Add(keywords[i].keyword, keywords[i]);
+        }
+
+        m_Recognizer = new KeywordRecognizer(keywordValues, ConfidenceLevel.Low);
         m_Recognizer.OnPhraseRecognized += OnPhraseRecognized;
         m_Recognizer.Start();
     }
 
     private void OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
+        SpeechKeyword speechKeyword = keywordDict[args.text];
+        speechKeyword.onRecognized.Invoke();
         StringBuilder builder = new StringBuilder();
         builder.AppendFormat("{0} ({1}){2}", args.text, args.confidence, Environment.NewLine);
         builder.AppendFormat("\tTimestamp: {0}{1}", args.phraseStartTime, Environment.NewLine);
@@ -30,4 +42,3 @@ public class UnitySpeechRecognizer : MonoBehaviour
         Debug.Log(builder.ToString());
     }
 }
-#endif
