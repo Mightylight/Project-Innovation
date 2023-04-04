@@ -5,6 +5,7 @@ public class CameraGyroControls : MonoBehaviour
     Quaternion offset;
     Quaternion original;
     private UnityEngine.Gyroscope _gyro;
+    [SerializeField] bool useGyro = true;
     void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
@@ -24,23 +25,22 @@ public class CameraGyroControls : MonoBehaviour
 
     public void DisableGyro()
     {
-        _gyro.enabled = false;
+        useGyro = false;
     }
-
-
-    //void Start()
-    //{
-    //    //ResetOffset();
-    //    //offset = transform.localRotation * Quaternion.Inverse(GyroToUnity(Input.gyro.attitude));
-    //}
 
     void Update()
     {
-        //if(!_gyroEnabled) return;
-        //if (Input.GetKeyDown(KeyCode.V)) ResetOffset();
-        transform.rotation = offset * GyroToUnity(_gyro.attitude);
-        //transform.rotation = new Quaternion(transform.rotation.x + 10, 10, 10, 1);
-        //CanvasManager.Instance.PhoneConsoleMessage($"{_gyro.attitude}");
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+            float rotationSpeed = 0.5f;
+            offset *= Quaternion.Euler(-touchDeltaPosition.y * rotationSpeed, touchDeltaPosition.x * rotationSpeed, 0);
+        }
+        if (useGyro) transform.rotation = offset * GyroToUnity(_gyro.attitude);
+        //TODO: Add mobile screen support, so the player can also look around in 360 degrees by swiping on the screen.
+        //Note that the rotation from the touch should be added to the offset so the gyroscope AND touchcontrols can be used at the same time.
+
+
     }
     private static Quaternion GyroToUnity(Quaternion q)
     {
@@ -51,7 +51,8 @@ public class CameraGyroControls : MonoBehaviour
     {
         transform.rotation = original;
         offset = transform.rotation * Quaternion.Inverse(GyroToUnity(_gyro.attitude));
-        Debug.Log("Gyro offset has been reset!");
-        CanvasManager.Instance.PhoneConsoleMessage($"Gyro offset has been reset!{offset}");
+        //Debug.Log("Gyro offset has been reset!");
+        CanvasManager.Instance.PhoneConsoleMessage($"Gyro offset has been reset!{offset}"); 
     }
+
 }
