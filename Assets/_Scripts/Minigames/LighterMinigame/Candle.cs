@@ -5,7 +5,6 @@ namespace _Scripts.Minigames.LighterMinigame
 {
     public class Candle : NetworkBehaviour
     {
-        
         public bool _isLit;
 
         public void ResetCandle()
@@ -26,6 +25,17 @@ namespace _Scripts.Minigames.LighterMinigame
             //shiny flamy stuffy
             Debug.Log("Candle Lit");
             _isLit = pIsLit;
+            if (pIsLit)
+            {
+                GetComponentInChildren<ParticleSystem>().Play();
+                GetComponentInChildren<Animator>().enabled = true;
+                GetComponentInChildren<Animator>().Play("fireLight");
+            }
+            else
+            {
+                GetComponentInChildren<ParticleSystem>().Stop();
+                GetComponentInChildren<Animator>().enabled = false;
+            }
         }
 
         [ClientRpc]

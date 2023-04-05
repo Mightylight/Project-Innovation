@@ -8,8 +8,8 @@ namespace _Scripts.Minigames.LighterMinigame
     public class LighterMinigameLogic : MonoBehaviour
     {
         [SerializeField] private Lighter _lighter;
-        [SerializeField] private List<Candle> _candles = new List<Candle>();
-        private List<Candle> _litCandles = new List<Candle>();
+        [SerializeField] private List<Candle> _candles = new();
+        private List<Candle> _litCandles = new();
         
         
 
@@ -17,7 +17,7 @@ namespace _Scripts.Minigames.LighterMinigame
         public void OnCandleLit(Candle pCandle)
         {
             if (NetworkManager.Singleton.IsClient) return;
-            if(!_lighter.isLit) return;
+            if(!_lighter._isLit) return;
             if (_litCandles.Contains(pCandle)) return;
             
             _litCandles.Add(pCandle);
@@ -37,7 +37,7 @@ namespace _Scripts.Minigames.LighterMinigame
                 return;
             }
 
-            //MinigameFSM.Instance.NextState();
+            MinigameFSM.Instance.NextState();
             Debug.Log("Correct!");
         }
 
@@ -47,6 +47,7 @@ namespace _Scripts.Minigames.LighterMinigame
             {
                 candle.ResetCandle();
             }
+            _litCandles.Clear();
         }
     }
 }
