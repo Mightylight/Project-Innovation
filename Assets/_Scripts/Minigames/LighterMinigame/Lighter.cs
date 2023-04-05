@@ -1,14 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Lighter : MonoBehaviour
+namespace _Scripts.Minigames.LighterMinigame
 {
-    public bool isLit = true;
-    
-    public void Light()
+    public class Lighter : MonoBehaviour
     {
-        isLit = true;
-        // Light the match
+        public bool _isLit = true;
+        [SerializeField] float _threshold = 0.1f;
+    
+
+
+        private void Light()
+        {
+            _isLit = true;
+            GetComponentInChildren<ParticleSystem>().Play();
+            GetComponentInChildren<Animator>().enabled = true;
+            GetComponentInChildren<Animator>().Play("fireLight");
+        }
+
+        public void MatchBoxExit()
+        {
+            Debug.Log("Hello");
+            if (GetComponent<Rigidbody>().velocity.magnitude > _threshold)
+            {
+                Light();
+            }
+        }
+    
+        public void UnLight()
+        {
+            _isLit = false;
+            GetComponentInChildren<ParticleSystem>().Stop();
+            GetComponentInChildren<Animator>().enabled = false;
+        }
     }
 }
