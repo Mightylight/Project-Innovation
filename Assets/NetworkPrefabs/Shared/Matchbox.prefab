@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 2124381796}
   - component: {fileID: -7800562280084779004}
   - component: {fileID: 7673716209516188107}
+  - component: {fileID: -58967083780555479}
   m_Layer: 0
   m_Name: Matchbox
   m_TagString: Untagged
@@ -265,6 +266,18 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
+--- !u!114 &-58967083780555479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230744066966112735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea8c0bff4e1e1044c8e69ef73aa44c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1230744066033938838
 PrefabInstance:
   m_ObjectHideFlags: 0
