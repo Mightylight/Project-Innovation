@@ -19,10 +19,11 @@ public class DummyNetworkObject : MonoBehaviour
         GameObject obj = Instantiate(networkPrefabToSpawn);
         obj.GetComponent<NetworkObject>().Spawn();
         obj.transform.position = transform.position;
+        obj.transform.rotation= transform.rotation;
         if (clientOnly) HideObject(obj);
         ObjectTracker tracker = obj.GetComponent<ObjectTracker>();
         if (tracker != null) tracker.SetTrackerObj(this.transform.parent);
-
+        SuperHelper.DestroyChildren(this.transform);
         Destroy(this.gameObject);
     }
     void HideObject(GameObject obj)

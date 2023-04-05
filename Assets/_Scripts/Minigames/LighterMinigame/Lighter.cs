@@ -6,12 +6,12 @@ namespace _Scripts.Minigames.LighterMinigame
     {
         public bool _isLit = true;
         [SerializeField] float _threshold = 0.1f;
-    
+        [SerializeField] GameObject candleFlame;
 
 
         private void Light()
         {
-            _isLit = true;
+            candleFlame.SetActive(true);
             GetComponentInChildren<ParticleSystem>().Play();
             GetComponentInChildren<Animator>().enabled = true;
             GetComponentInChildren<Animator>().Play("fireLight");
@@ -28,7 +28,7 @@ namespace _Scripts.Minigames.LighterMinigame
     
         public void UnLight()
         {
-            _isLit = false;
+            candleFlame.SetActive(false);
             GetComponentInChildren<ParticleSystem>().Stop();
             GetComponentInChildren<Animator>().enabled = false;
         }

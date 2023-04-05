@@ -7,7 +7,6 @@ namespace _Scripts.Minigames.LighterMinigame
 {
     public class LighterMinigameLogic : MonoBehaviour
     {
-        [SerializeField] private Lighter _lighter;
         [SerializeField] private List<Candle> _candles = new();
         private List<Candle> _litCandles = new();
         
@@ -17,7 +16,6 @@ namespace _Scripts.Minigames.LighterMinigame
         public void OnCandleLit(Candle pCandle)
         {
             if (NetworkManager.Singleton.IsClient) return;
-            if(!_lighter._isLit) return;
             if (_litCandles.Contains(pCandle)) return;
             
             _litCandles.Add(pCandle);
