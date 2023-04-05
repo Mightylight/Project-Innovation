@@ -13,6 +13,7 @@ public class HintGlowManager : MonoBehaviour
     [SerializeField] float timeAlive;
     void Start()
     {
+        if (NetworkManager.Singleton.IsClient) return;
         StartCoroutine(DieAfterTime());
     }
 

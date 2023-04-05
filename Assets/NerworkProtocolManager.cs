@@ -20,12 +20,18 @@ public class NerworkProtocolManager : NetworkBehaviour
         }
     }
 
-    [ServerRpc]
+    private void Awake()
+    {
+        if (_instance == null) _instance = this;
+        else Destroy(gameObject);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
     public void RequestClueServerRpc()
     {
         MinigameFSM.Instance.GetClue();
     }
-
+        
 
     [ClientRpc]
     public void ClueNotReadyClientRpc()
