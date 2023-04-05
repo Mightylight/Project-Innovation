@@ -1,9 +1,9 @@
+#if !UNITY_ANDROID
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
-
 
 
 public class UnitySpeechRecognizer : MonoBehaviour
@@ -41,3 +41,4 @@ public class UnitySpeechRecognizer : MonoBehaviour
         Debug.Log(builder.ToString());
     }
 }
+#endif

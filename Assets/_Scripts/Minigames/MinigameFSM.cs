@@ -83,9 +83,13 @@ public class MinigameFSM : MonoBehaviour
     {
         if (true)//TODO:: if cooldown is done
         {
-            GameObject obj = Instantiate(hintGlowPrefab);
-            obj.transform.position = _currentState.hintPosition.transform.position;
-            obj.GetComponent<NetworkObject>().Spawn();
+            foreach (GameObject hintObj in _currentState.hintObjects)
+            {
+
+                GameObject obj = Instantiate(hintGlowPrefab);
+                obj.GetComponent<ObjectTracker>().SetTrackerObj(hintObj.transform);
+                obj.GetComponent<NetworkObject>().Spawn();
+            }
             //TODO:: Start cooldown and do something like:
             // 
             // NetworkProtocolManager.Instance.SetClueCooldownClientRpc(newcountdown);

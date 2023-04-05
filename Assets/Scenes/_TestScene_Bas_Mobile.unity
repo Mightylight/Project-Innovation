@@ -833,7 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1332,6 +1332,13 @@ MonoBehaviour:
         type: 3}
     - Override: 2
       Prefab: {fileID: 0}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 2146225639
+      OverridingTargetPrefab: {fileID: 3774600979923450820, guid: d6ff4af2f13b7eb409d853009a6a3e8e,
+        type: 3}
+    - Override: 0
+      Prefab: {fileID: 4752204147569150229, guid: 804fffb28f245dd419eb0f3cfcb7c12e,
+        type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 2146225639
       OverridingTargetPrefab: {fileID: 3774600979923450820, guid: d6ff4af2f13b7eb409d853009a6a3e8e,

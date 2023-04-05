@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class CameraTouchControls : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 targetOffset;
-    public float distance = 5.0f;
-    public float maxDistance = 20;
-    public float minDistance = .6f;
-    public float xSpeed = 5.0f;
-    public float ySpeed = 5.0f;
-    public int yMinLimit = -80;
-    public int yMaxLimit = 80;
-    public float zoomRate = 10.0f;
-    public float panSpeed = 0.3f;
-    public float zoomDampening = 5.0f;
+    [SerializeField] Transform target;
+    [SerializeField] Vector3 targetOffset;
+    [SerializeField] float distance = 5.0f;
+    [SerializeField] float maxDistance = 20;
+    [SerializeField] float minDistance = .6f;
+    [SerializeField] float xSpeed = 5.0f;
+    [SerializeField] float ySpeed = 5.0f;
+    [SerializeField] int yMinLimit = -80;
+    [SerializeField] int yMaxLimit = 80;
+    [SerializeField] float zoomRate = 10.0f;
+    [SerializeField] float panSpeed = 0.3f;
+    [SerializeField] float zoomDampening = 5.0f;
 
     private float xDeg = 0.0f;
     private float yDeg = 0.0f;
@@ -24,13 +24,13 @@ public class CameraTouchControls : MonoBehaviour
     private Quaternion currentRotation;
     private Quaternion desiredRotation;
     private Quaternion rotation;
-    private Vector3 position;
+    //private Vector3 position;
 
-    private Vector3 FirstPosition;
-    private Vector3 SecondPosition;
-    private Vector3 delta;
-    private Vector3 lastOffset;
-    private Vector3 lastOffsettemp;
+    //private Vector3 FirstPosition;
+    //private Vector3 SecondPosition;
+    //private Vector3 delta;
+    //private Vector3 lastOffset;
+    //private Vector3 lastOffsettemp;
 
 
 
@@ -70,15 +70,22 @@ public class CameraTouchControls : MonoBehaviour
     {
         transform.rotation = original;
         offset = transform.rotation * Quaternion.Inverse(GyroToUnity(_gyro.attitude));
-        //Debug.Log("Gyro offset has been reset!");
-        CanvasManager.Instance.PhoneConsoleMessage($"Gyro offset has been reset!{offset}");
-    }
+        desiredRotation = transform.rotation;
+        currentRotation = transform.rotation;
+        rotation = transform.rotation;
+        xDeg = 0.0f;
+        yDeg = 0.0f;
+        currentDistance = 0;
+        desiredDistance = 0;
+    //Debug.Log("Gyro offset has been reset!");
+    //CanvasManager.Instance.PhoneConsoleMessage($"Gyro offset has been reset!{offset}");
+}
 
 
 
     void LateUpdate()
     {
-        HandleZoom();
+       // HandleZoom();
         HandleOrbit();
 
         if (useGyro) gyroRotation = offset * GyroToUnity(_gyro.attitude);
@@ -87,18 +94,18 @@ public class CameraTouchControls : MonoBehaviour
         rotation = Quaternion.Lerp(currentRotation, desiredRotation, Time.deltaTime * zoomDampening);
         transform.rotation = rotation;
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            FirstPosition = Input.mousePosition;
-            lastOffset = targetOffset;
-        }
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    FirstPosition = Input.mousePosition;
+        //    lastOffset = targetOffset;
+        //}
 
-        if (Input.GetMouseButton(1))
-        {
-            SecondPosition = Input.mousePosition;
-            delta = SecondPosition - FirstPosition;
-            targetOffset = lastOffset + transform.right * delta.x * 0.003f + transform.up * delta.y * 0.003f;
-        }
+        //if (Input.GetMouseButton(1))
+        //{
+        //    SecondPosition = Input.mousePosition;
+        //    delta = SecondPosition - FirstPosition;
+        //    targetOffset = lastOffset + transform.right * delta.x * 0.003f + transform.up * delta.y * 0.003f;
+        //}
 
         desiredDistance = Mathf.Clamp(desiredDistance, minDistance, maxDistance);
         currentDistance = Mathf.Lerp(currentDistance, desiredDistance, Time.deltaTime * zoomDampening);
@@ -134,8 +141,8 @@ public class CameraTouchControls : MonoBehaviour
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
             Vector2 touchPosition = Input.GetTouch(0).deltaPosition;
-            xDeg += touchPosition.x * xSpeed * 0.002f;
-            yDeg -= touchPosition.y * ySpeed * 0.002f;
+            xDeg -= touchPosition.x * xSpeed * 0.002f;
+            yDeg += touchPosition.y * ySpeed * 0.002f;
            // yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
         }
     }
@@ -145,8 +152,5 @@ public class CameraTouchControls : MonoBehaviour
         angle = Mathf.Repeat(angle, 360);
         return Mathf.Clamp(angle, min, max);
     }
-
-
-
 
 }
