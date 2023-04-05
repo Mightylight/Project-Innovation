@@ -49,5 +49,10 @@ public class CanvasManager : MonoBehaviour
 
     }
 
+    public void OnGetClueButton()
+    {
+        NerworkProtocolManager.Instance.RequestClueServerRpc();
+    }
+
 
 }

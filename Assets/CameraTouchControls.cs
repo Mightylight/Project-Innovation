@@ -9,8 +9,8 @@ public class CameraTouchControls : MonoBehaviour
     [SerializeField] float distance = 5.0f;
     [SerializeField] float maxDistance = 20;
     [SerializeField] float minDistance = .6f;
-    [SerializeField] float xSpeed = 5.0f;
-    [SerializeField] float ySpeed = 5.0f;
+    [SerializeField] float xSpeed = 20.0f;
+    [SerializeField] float ySpeed = 20.0f;
     [SerializeField] int yMinLimit = -80;
     [SerializeField] int yMaxLimit = 80;
     [SerializeField] float zoomRate = 10.0f;

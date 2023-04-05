@@ -5,6 +5,7 @@ using Unity.Netcode.Transports.UTP;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ClientLobbyManager : MonoBehaviour
 {
@@ -19,22 +20,33 @@ public class ClientLobbyManager : MonoBehaviour
     {
         ipInputField.text = defaultIP;
         NetworkManager.Singleton.OnClientConnectedCallback += OnServerJoined;
+        NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
     }
 
     public void JoinServer()
     {
+        CanvasManager.Instance.GetComponent<MobileCanvasFSM>().LoadState(MobileState.JOINING);
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(
         ipInputField.text,  // The IP address is a string
         (ushort)defaultPort // The port number is an unsigned short
         );
         NetworkManager.Singleton.StartClient();
-        joinButton.interactable = false;
-        userFeedbackTextobj.text = "Trying to join...";
+        //joinButton.interactable = false;
+        //userFeedbackTextobj.text = "Trying to join...";
     }
 
     public void OnServerJoined(ulong clientID)
     {
-        Debug.Log("Succesfully connected with the server!");
-        this.gameObject.SetActive(false);
+        CanvasManager.Instance.PhoneConsoleMessage($" Connected as client with id {clientID}!");
+        CanvasManager.Instance.GetComponent<MobileCanvasFSM>().LoadState(MobileState.PLAYING);
     }
+
+    public void OnClientDisconnected(ulong clientID)
+    {
+        CanvasManager.Instance.PhoneConsoleMessage($"Client with id {clientID} disconnected");
+        CanvasManager.Instance.GetComponent<MobileCanvasFSM>().LoadState(MobileState.DISCONNECTED);
+    }
+
+
+
 }
