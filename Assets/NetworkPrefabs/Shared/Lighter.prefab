@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5051744114293433322
+--- !u!1 &3214464941585895497
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5051744114293433323}
-  - component: {fileID: 5051744114293433320}
-  - component: {fileID: 1263676915}
+  - component: {fileID: 2132729342975082002}
+  - component: {fileID: 4532672272830174639}
+  - component: {fileID: 1579668902271201337}
   m_Layer: 0
   m_Name: Tip
   m_TagString: Untagged
@@ -18,43 +18,42 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5051744114293433323
+--- !u!4 &2132729342975082002
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5051744114293433322}
+  m_GameObject: {fileID: 3214464941585895497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4113234714479319697}
+  m_Children: []
   m_Father: {fileID: 4724803759686425862}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &5051744114293433320
+--- !u!136 &4532672272830174639
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5051744114293433322}
+  m_GameObject: {fileID: 3214464941585895497}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.010097355
-  m_Height: 0.031386793
+  m_Radius: 0.02159593
+  m_Height: 0.03982734
   m_Direction: 1
-  m_Center: {x: -0.007032305, y: 0.043356515, z: 0}
---- !u!114 &1263676915
+  m_Center: {x: 0, y: 0.05, z: -0.01}
+--- !u!114 &1579668902271201337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5051744114293433322}
+  m_GameObject: {fileID: 3214464941585895497}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b893497970870c84f873c5bc81286f3c, type: 3}
@@ -68,7 +67,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5051744115544783591}
-        m_TargetAssemblyTypeName: Lighter, Assembly-CSharp
+        m_TargetAssemblyTypeName: _Scripts.Minigames.LighterMinigame.Lighter, Assembly-CSharp
         m_MethodName: MatchBoxExit
         m_Mode: 1
         m_Arguments:
@@ -96,6 +95,8 @@ GameObject:
   - component: {fileID: 5051744115544783584}
   - component: {fileID: 2789924518054260958}
   - component: {fileID: 5869247219508699093}
+  - component: {fileID: 5380546769353029027}
+  - component: {fileID: 6002208855701637934}
   m_Layer: 0
   m_Name: Lighter
   m_TagString: Untagged
@@ -115,7 +116,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5051744114293433323}
+  - {fileID: 2132729342975082002}
+  - {fileID: 4113234714479319697}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -182,8 +184,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isLit: 0
-  _threshold: 0.1
-  candleFlame: {fileID: 0}
+  _threshold: 1.5
+  candleFlame: {fileID: 4113234714479319700}
+  particlesystem: {fileID: 4113234714479319702}
+  animator: {fileID: 4113234715023853122}
 --- !u!54 &5051744115544783590
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -287,7 +291,7 @@ MonoBehaviour:
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -380,17 +384,71 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
+--- !u!114 &5380546769353029027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393640340458194876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82f45ccfb8f6c4418d9660d179b8f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BeginThreshold: 5
+  m_EndThreshold: 0.25
+  m_OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5051744115544783591}
+        m_TargetAssemblyTypeName: _Scripts.Minigames.LighterMinigame.Lighter, Assembly-CSharp
+        m_MethodName: UnLight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6002208855701637934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393640340458194876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5051744114676648010
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5051744114293433323}
+    m_TransformParent: {fileID: 4724803759686425862}
     m_Modifications:
     - target: {fileID: 9155329515031925467, guid: 4103b572f2f427f459cf78e2fabf65d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155329515031925467, guid: 4103b572f2f427f459cf78e2fabf65d2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.10000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155329515031925467, guid: 4103b572f2f427f459cf78e2fabf65d2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.10000001
       objectReference: {fileID: 0}
     - target: {fileID: 9155329515031925467, guid: 4103b572f2f427f459cf78e2fabf65d2,
         type: 3}
@@ -405,7 +463,7 @@ PrefabInstance:
     - target: {fileID: 9155329515031925467, guid: 4103b572f2f427f459cf78e2fabf65d2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0112
+      value: -0.011199996
       objectReference: {fileID: 0}
     - target: {fileID: 9155329515031925467, guid: 4103b572f2f427f459cf78e2fabf65d2,
         type: 3}
@@ -420,12 +478,12 @@ PrefabInstance:
     - target: {fileID: 9155329515031925467, guid: 4103b572f2f427f459cf78e2fabf65d2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9155329515031925467, guid: 4103b572f2f427f459cf78e2fabf65d2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9155329515031925467, guid: 4103b572f2f427f459cf78e2fabf65d2,
         type: 3}
@@ -495,6 +553,12 @@ CapsuleCollider:
   m_Height: 0.031386793
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!198 &4113234714479319702 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9155329515031925468, guid: 4103b572f2f427f459cf78e2fabf65d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5051744114676648010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4113234715023853120 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9155329515578560010, guid: 4103b572f2f427f459cf78e2fabf65d2,
@@ -521,3 +585,9 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!95 &4113234715023853122 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9155329515578560008, guid: 4103b572f2f427f459cf78e2fabf65d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5051744114676648010}
+  m_PrefabAsset: {fileID: 0}

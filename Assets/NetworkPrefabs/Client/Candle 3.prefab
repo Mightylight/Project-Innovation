@@ -94,7 +94,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420071113948839175}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.8629483
   m_Height: 4.1829386
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 9148801934619457782}
   - component: {fileID: 9148801934619457783}
   m_Layer: 0
-  m_Name: Candle
+  m_Name: Candle 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,19 +7,23 @@ namespace _Scripts.Minigames.LighterMinigame
         public bool _isLit = true;
         [SerializeField] float _threshold = 0.1f;
         [SerializeField] GameObject candleFlame;
+        [SerializeField] ParticleSystem particlesystem;
+        [SerializeField] Animator animator;
 
 
         private void Light()
         {
+            _isLit = true;
             candleFlame.SetActive(true);
-            GetComponentInChildren<ParticleSystem>().Play();
-            GetComponentInChildren<Animator>().enabled = true;
-            GetComponentInChildren<Animator>().Play("fireLight");
+            particlesystem.Play();
+            animator.enabled = true;
+            animator.Play("fireLight");
         }
 
         public void MatchBoxExit()
         {
             Debug.Log("Hello");
+            Debug.Log(GetComponent<Rigidbody>().velocity.magnitude);
             if (GetComponent<Rigidbody>().velocity.magnitude > _threshold)
             {
                 Light();
@@ -28,9 +32,11 @@ namespace _Scripts.Minigames.LighterMinigame
     
         public void UnLight()
         {
+            if (!_isLit) return;
+            _isLit = false;
             candleFlame.SetActive(false);
-            GetComponentInChildren<ParticleSystem>().Stop();
-            GetComponentInChildren<Animator>().enabled = false;
+            particlesystem.Stop();
+            animator.enabled = false;
         }
     }
 }
