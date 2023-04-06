@@ -70,6 +70,5 @@ namespace _Scripts.Minigames.LighterMinigame
                 state.GetComponent<LighterMinigameLogic>().OnCandleLit(this);
             }
         }
-
     }
 }
