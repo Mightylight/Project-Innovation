@@ -198,7 +198,7 @@ MonoBehaviour:
   m_RecycleDelayTime: 1
   m_Lock:
     socketItems:
-    - {fileID: 0}
+    - {fileID: 6711007585800144899, guid: 14bc0dc0a8a9a284f9062f56e52ee128, type: 3}
 --- !u!1 &5865562026014835796
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   vinylPlates:
   - music: {fileID: 8300000, guid: 72dabca953ab43c42a1b769430621b60, type: 3}
     vinylPlateName: 0
-  - music: {fileID: 8300000, guid: 72dabca953ab43c42a1b769430621b60, type: 3}
+  - music: {fileID: 8300000, guid: 77d00f1a54454264eaa6dcd978667f11, type: 3}
     vinylPlateName: 1
   socket: {fileID: 5865562025193591329}
 --- !u!114 &5865562026014835794
