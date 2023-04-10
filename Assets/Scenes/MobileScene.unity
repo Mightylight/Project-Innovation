@@ -677,12 +677,6 @@ MonoBehaviour:
       SourceHashToOverride: 2235578965
       OverridingTargetPrefab: {fileID: 9148801934619457785, guid: 62e4c70ef1d4f9141a7942f20c6ac88f,
         type: 3}
-    - Override: 2
-      Prefab: {fileID: 0}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 2620509258
-      OverridingTargetPrefab: {fileID: 9148801934619457785, guid: b67f6a299cfe4fe4f9acbe42898b965e,
-        type: 3}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
