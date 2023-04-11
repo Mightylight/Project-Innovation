@@ -20,6 +20,7 @@ public class PhonographManager : NetworkBehaviour
         {
             vinylPlatesDic.Add(plate.vinylPlateName,plate);
         }
+        if (NetworkManager.Singleton == null) return;
         if (NetworkManager.Singleton.IsClient) Destroy(socket);
     }
 
