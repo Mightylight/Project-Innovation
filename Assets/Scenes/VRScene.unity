@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 237261920}
   - component: {fileID: 237261919}
   - component: {fileID: 237261918}
+  - component: {fileID: 237261922}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -519,6 +520,19 @@ Transform:
   m_Father: {fileID: 1615110236}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &237261922
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237261917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.9293735, z: 10}
+  m_Center: {x: 0, y: -1.4646868, z: 0}
 --- !u!1 &249800146
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,17 +848,17 @@ PrefabInstance:
     - target: {fileID: 692344779980163023, guid: d50563bd895772240b10bde403b76cee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.01
+      value: 4.083
       objectReference: {fileID: 0}
     - target: {fileID: 692344779980163023, guid: d50563bd895772240b10bde403b76cee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1902183
+      value: 0.765
       objectReference: {fileID: 0}
     - target: {fileID: 692344779980163023, guid: d50563bd895772240b10bde403b76cee,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.89
+      value: 4.005
       objectReference: {fileID: 0}
     - target: {fileID: 692344779980163023, guid: d50563bd895772240b10bde403b76cee,
         type: 3}

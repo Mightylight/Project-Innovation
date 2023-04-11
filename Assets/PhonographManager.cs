@@ -13,6 +13,12 @@ public class PhonographManager : NetworkBehaviour
     [SerializeField] XRLockSocketInteractor socket;
     AudioSource audioSource;
 
+
+    [SerializeField] GameObject keyPrefab;
+    [SerializeField] Transform shootFrom;
+    [SerializeField] float shootStrenght = 10;
+    bool keyShot = false;
+
     public void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,12 +41,24 @@ public class PhonographManager : NetworkBehaviour
         StopSong();
     }
 
+    public void ShootKey()
+    {
+        if (keyShot) return;
+        GameObject key = Instantiate(keyPrefab);
+        key.transform.position = shootFrom.position;
+        key.transform.rotation = shootFrom.rotation;
+        key.GetComponent<Rigidbody>().velocity = key.transform.forward * shootStrenght;
+        key.GetComponent<NetworkObject>().Spawn();
+        keyShot = true;
+    }
+
     public void OnSongEntered()
     {
         VynilPlateName plateName = socket.GetOldestInteractableSelected().transform.GetComponent<VinylPlateManager>().plateName;
         int plateNameInt = (int)plateName;
         PlaySong(plateNameInt);
         PlayerSongClientRpc(plateNameInt);
+        ShootKey();
     }
     
     public void OnSongLeaving()
