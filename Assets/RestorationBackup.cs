@@ -21,6 +21,7 @@ public class RestorationBackup : MonoBehaviour
 
     private void Awake()
     {
+        if (NetworkManager.Singleton == null) return;
         if (NetworkManager.Singleton.IsClient)
         {
             Destroy(this);//We only need to do this on the server, save some resources on the mobile.
