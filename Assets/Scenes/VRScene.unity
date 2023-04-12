@@ -3182,10 +3182,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 645069804479259254, guid: bd5780f9cdc66e340adaa19335ffbbf9,
+        type: 3}
+      propertyPath: m_AllowAnchorControl
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 651659979052339740, guid: bd5780f9cdc66e340adaa19335ffbbf9,
         type: 3}
       propertyPath: m_Name
       value: Custom XR Origin
+      objectReference: {fileID: 0}
+    - target: {fileID: 651659979052339740, guid: bd5780f9cdc66e340adaa19335ffbbf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 651659979052339743, guid: bd5780f9cdc66e340adaa19335ffbbf9,
         type: 3}
