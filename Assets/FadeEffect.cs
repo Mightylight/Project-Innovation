@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FadeEffect : MonoBehaviour
@@ -7,18 +8,31 @@ public class FadeEffect : MonoBehaviour
     public float fadeDuration = 1.0f; // Duration of the fade effect
     private Renderer rend;
 
+    private Coroutine currentCoroutine;
+
     private void Awake()
     {
         rend = GetComponent<Renderer>();
     }
 
-
     private void Start()
     {
-        StartCoroutine(FadeToTransparent());
+        FadeToTransparent();
     }
 
-    private IEnumerator FadeToBlack()
+    public void FadeToBlack(bool loadServerScene = false)
+    {
+        if(currentCoroutine != null) StopCoroutine(currentCoroutine);
+        currentCoroutine = StartCoroutine(FadeToBlackEnum(loadServerScene));
+    }
+
+    public void FadeToTransparent()
+    {
+        if (currentCoroutine != null) StopCoroutine(currentCoroutine);
+        currentCoroutine = StartCoroutine(FadeToTransparentEnum());
+    }
+
+    private IEnumerator FadeToBlackEnum(bool loadServerScene = false)
     {
         Color startColor = rend.material.color;
 
@@ -38,9 +52,10 @@ public class FadeEffect : MonoBehaviour
         }
 
         rend.material.color = targetColor;
+        if (loadServerScene) SceneManager.LoadScene("VRScene");
     }
 
-    private IEnumerator FadeToTransparent()
+    private IEnumerator FadeToTransparentEnum()
     {
         Color startColor = rend.material.color;
 

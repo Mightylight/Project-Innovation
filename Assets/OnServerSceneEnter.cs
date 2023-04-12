@@ -8,6 +8,7 @@ public class OnServerSceneEnter : MonoBehaviour
     void Start()
     {
         NetworkManager.Singleton.StartServer();
+        VRPlayerManager.Instance.OnVRSceneLoaded();
     }
 
     void Update()

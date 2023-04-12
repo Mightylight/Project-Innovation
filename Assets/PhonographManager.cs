@@ -43,7 +43,7 @@ public class PhonographManager : NetworkBehaviour
 
     public void ShootKey()
     {
-        //if (keyShot) return;
+        if (keyShot) return;
         GameObject key = Instantiate(keyPrefab);
         key.transform.position = shootFrom.position;
         key.transform.rotation = shootFrom.rotation;
