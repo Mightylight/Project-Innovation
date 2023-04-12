@@ -10,6 +10,7 @@ public class CleanableSurface : MonoBehaviour
     [SerializeField] Texture2D interactableTexture;
     [SerializeField] Texture2D cleanTexture;
     [SerializeField] Texture2D brush;
+    public bool _hasBeenCleaned;
 
     // Update is called once per frame
     //void Update()
@@ -26,6 +27,11 @@ public class CleanableSurface : MonoBehaviour
     /// <param name="dirtyObject"></param>
     public void CleanObject(Vector2 textureCoord)
     {
+        if (_hasBeenCleaned == false)
+        {
+            _hasBeenCleaned = true;
+            MinigameFSM.Instance.NextState();
+        }
         Vector2 pixelCoord = new Vector2(textureCoord.x * interactableTexture.width, textureCoord.y * interactableTexture.height);
         Vector2Int pixelPosition = new Vector2Int(Mathf.RoundToInt(pixelCoord.x), Mathf.RoundToInt(pixelCoord.y));
 

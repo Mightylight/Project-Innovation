@@ -1,10 +1,18 @@
+using UnityEngine;
+
 namespace _Scripts.Minigames.WindowCleanMinigame
 {
     public class WindowCleanMinigameState : MinigameState
     {
+        [SerializeField] private CleanableSurface _cleanableSurface;
+        
+        
         public override void OnStateEnter()
         {
-            throw new System.NotImplementedException();
+            if (_cleanableSurface._hasBeenCleaned)
+            {
+                MinigameFSM.Instance.NextState();
+            }
         }
 
         public override void OnStateExit()
