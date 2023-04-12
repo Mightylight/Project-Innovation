@@ -920,7 +920,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &321412637
 PrefabInstance:
@@ -1320,7 +1320,7 @@ PrefabInstance:
     - target: {fileID: 9148801934619457742, guid: 7a77f6668147a3441972e4bd83c23b37,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 9148801934619457742, guid: 7a77f6668147a3441972e4bd83c23b37,
         type: 3}
@@ -1508,7 +1508,7 @@ PrefabInstance:
     - target: {fileID: 9148801934619457742, guid: 41d0eda6dc2f7904c9d0442af3307a6c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9148801934619457742, guid: 41d0eda6dc2f7904c9d0442af3307a6c,
         type: 3}
@@ -2258,7 +2258,7 @@ GameObject:
   - component: {fileID: 1270931494}
   - component: {fileID: 1270931495}
   m_Layer: 0
-  m_Name: Plane (8)
+  m_Name: Moving wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2276,8 +2276,8 @@ Transform:
   m_LocalScale: {x: 0.17646372, y: 1, z: 0.28187656}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1615110236}
-  m_RootOrder: 11
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
 --- !u!64 &1270931491
 MeshCollider:
@@ -2964,7 +2964,6 @@ Transform:
   - {fileID: 1238438073}
   - {fileID: 1537867285}
   - {fileID: 1262656490}
-  - {fileID: 1270931490}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3517,7 +3516,7 @@ PrefabInstance:
     - target: {fileID: 9148801934619457742, guid: 9fbc615e94663854b92233fcc2ae228c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 9148801934619457742, guid: 9fbc615e94663854b92233fcc2ae228c,
         type: 3}
@@ -3669,7 +3668,7 @@ PrefabInstance:
     - target: {fileID: 9148801934619457742, guid: 4157311e0e6821c49af27dda2d938381,
         type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 9148801934619457742, guid: 4157311e0e6821c49af27dda2d938381,
         type: 3}
