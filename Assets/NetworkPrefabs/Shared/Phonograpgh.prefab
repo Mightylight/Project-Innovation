@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 5865562026014835793}
   - component: {fileID: 5865562026014835794}
   - component: {fileID: 5865562026014835792}
+  - component: {fileID: 7005137803257700360}
   m_Layer: 0
   m_Name: Phonograpgh
   m_TagString: Untagged
@@ -382,6 +383,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &7005137803257700360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5865562026014835796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5818776, y: 0.4915079, z: 0.6243454}
+  m_Center: {x: -0.029400289, y: 0.25424606, z: 0.13338467}
 --- !u!1 &8125711943877602108
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DummyNetworkObject : MonoBehaviour
 {
@@ -9,6 +10,16 @@ public class DummyNetworkObject : MonoBehaviour
     [Tooltip("Enable this to hide the object in the server")]
     [SerializeField] bool clientOnly = false;
     void Start()
+    {
+        if(NetworkManager.Singleton == null)
+        {
+            SceneManager.activeSceneChanged += ChangedActiveScene;
+            return;
+        }
+        NetworkManager.Singleton.OnServerStarted += SpawnNetworkObject;
+    }
+
+    void ChangedActiveScene(Scene current, Scene next)
     {
         NetworkManager.Singleton.OnServerStarted += SpawnNetworkObject;
     }
