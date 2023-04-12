@@ -9,7 +9,7 @@ namespace _Scripts.Minigames.WindowCleanMinigame
         
         public override void OnStateEnter()
         {
-            if (_cleanableSurface._hasBeenCleaned)
+            if (_cleanableSurface._hasBeenCleaned)//Skip this state if it has already been cleaned
             {
                 MinigameFSM.Instance.NextState();
             }
@@ -17,7 +17,7 @@ namespace _Scripts.Minigames.WindowCleanMinigame
 
         public override void OnStateExit()
         {
-            throw new System.NotImplementedException();
+           // throw new System.NotImplementedException();
         }
     }
 }

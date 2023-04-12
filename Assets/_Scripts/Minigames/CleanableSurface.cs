@@ -1,3 +1,4 @@
+using _Scripts.Minigames.WindowCleanMinigame;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,8 +30,8 @@ public class CleanableSurface : MonoBehaviour
     {
         if (_hasBeenCleaned == false)
         {
-            _hasBeenCleaned = true;
-            MinigameFSM.Instance.NextState();
+            _hasBeenCleaned = true; 
+            if(MinigameFSM.Instance.CurrentState is WindowCleanMinigameState || MinigameFSM.Instance.CurrentState is ReadStartPaperMinigameState) MinigameFSM.Instance.NextState();
         }
         Vector2 pixelCoord = new Vector2(textureCoord.x * interactableTexture.width, textureCoord.y * interactableTexture.height);
         Vector2Int pixelPosition = new Vector2Int(Mathf.RoundToInt(pixelCoord.x), Mathf.RoundToInt(pixelCoord.y));
