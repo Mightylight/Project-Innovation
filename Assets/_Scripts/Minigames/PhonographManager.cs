@@ -16,7 +16,7 @@ public class PhonographManager : NetworkBehaviour
 
     [SerializeField] GameObject keyPrefab;
     [SerializeField] Transform shootFrom;
-    [SerializeField] float shootStrenght = 10;
+    [SerializeField] float shootStrenght = 5;
     bool keyShot = false;
 
     public void Awake()
