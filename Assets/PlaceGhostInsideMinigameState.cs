@@ -12,7 +12,6 @@ public class PlaceGhostInsideMinigameState : MinigameState
 
     public override void OnStateExit()
     {
-        //TO ENTER NEXT STATE, SAY PHRASE
         // throw new System.NotImplementedException();
     }
 }

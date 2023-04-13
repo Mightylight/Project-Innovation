@@ -44,7 +44,11 @@ public class PhonographManager : NetworkBehaviour
     public void ShootKey()
     {
         if (keyShot) return;
+        MinigameFSM miniFSM = MinigameFSM.Instance;
+        miniFSM.NextState();
         GameObject key = Instantiate(keyPrefab);
+        miniFSM.CurrentState.hintObjects.Add(key);
+        miniFSM.CurrentState.hintObjects.Add(this.gameObject);
         key.transform.position = shootFrom.position;
         key.transform.rotation = shootFrom.rotation;
         key.GetComponent<Rigidbody>().velocity = key.transform.forward * shootStrenght;
