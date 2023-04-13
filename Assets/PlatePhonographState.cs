@@ -8,6 +8,7 @@ public class PlatePhonographState : MinigameState
     [SerializeField] WallSlider wallToSlide;
     public override void OnStateEnter()
     {
+        Debug.Log("entered phonograph state");
         hintObjects = GameObject.FindGameObjectsWithTag("Plate").ToList<GameObject>();//Oh god this is awfull, but I do it only once...
         wallToSlide.SlideWall();
     }

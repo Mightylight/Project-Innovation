@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SayPhraseMinigameState : MinigameState
 {
+    #if !UNITY_ANDROID
     [SerializeField]UnitySpeechRecognizer speechRecognizer;
 
     public override void OnStateEnter()
     {
-        //Enable text on the wall for vr 
-        //Enable text on the wall for phone
+        speechRecognizer = GetComponent<UnitySpeechRecognizer>();
         speechRecognizer.enabled = true;
     }
 
@@ -17,4 +17,15 @@ public class SayPhraseMinigameState : MinigameState
     {
         speechRecognizer.enabled = false;
     }
+    #else
+    public override void OnStateEnter()
+    {
+        Debug.LogError("Change the build of the server to windows!");
+    }
+
+    public override void OnStateExit()
+    {
+        Debug.LogError("Change the build of the server to windows!");
+    }
+#endif
 }

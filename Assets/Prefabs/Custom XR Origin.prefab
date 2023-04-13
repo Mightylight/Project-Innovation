@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 651659977522376480}
   - component: {fileID: 651659977522376487}
   - component: {fileID: 7478243192796378067}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 651659978855072617}
   - component: {fileID: 651659978855072616}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: XR Interaction Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 5205606615887232876}
   - component: {fileID: 1764198405562324358}
   - component: {fileID: 949438542771893669}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Custom XR Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1086,7 +1086,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 651659979083283991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1492,7 +1492,7 @@ GameObject:
   - component: {fileID: 6724228014042565133}
   - component: {fileID: 5733364303063312595}
   - component: {fileID: 1746300601518280705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UI Overlay Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1600,7 +1600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1043047324688653702}
   - component: {fileID: 4684515540235026637}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1653,7 +1653,7 @@ GameObject:
   - component: {fileID: 3378619526207212410}
   - component: {fileID: 7587259112802086041}
   - component: {fileID: 7847806146579526774}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2086,7 +2086,7 @@ GameObject:
   - component: {fileID: 6890707630084392269}
   - component: {fileID: 1613816482647102748}
   - component: {fileID: 1606029548664670072}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2182,7 +2182,7 @@ GameObject:
   - component: {fileID: 6619838427843026788}
   - component: {fileID: 4426432449310437016}
   - component: {fileID: 7710255730156363207}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2317,7 +2317,7 @@ GameObject:
   - component: {fileID: 8391710162698062355}
   - component: {fileID: 8956422950990562740}
   - component: {fileID: 6766157079710406270}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2413,7 +2413,7 @@ GameObject:
   - component: {fileID: 5240940985566480310}
   - component: {fileID: 3627113259020341435}
   - component: {fileID: 2354140006301606408}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Loading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2534,7 +2534,7 @@ GameObject:
   - component: {fileID: 6677379908766875164}
   - component: {fileID: 6677379908766875165}
   - component: {fileID: 6677379908766875161}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2653,7 +2653,7 @@ GameObject:
   - component: {fileID: 355687029530467928}
   - component: {fileID: 3451805070661402930}
   - component: {fileID: 2848520135652090126}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2944,6 +2944,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HAND
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 798881e06ef41da4e8a542c1d55cefc8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 798881e06ef41da4e8a542c1d55cefc8, type: 3}
 --- !u!4 &575341380514028477 stripped
@@ -2965,6 +2970,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8497166392564674039}
     m_Modifications:
+    - target: {fileID: -9195334384663461526, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11cd62256b1d470f922b2c8e6446cc77,
         type: 3}
       propertyPath: m_RootOrder
@@ -3035,10 +3045,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6432099818705810534, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4651580333068701978, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3307531278845158470, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 376103152133210332, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 11cd62256b1d470f922b2c8e6446cc77,
         type: 3}
       propertyPath: m_Name
       value: XRControllerRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043511489956387391, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578149583137738979, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619225641134156614, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756583138425666249, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158676226541525647, guid: 11cd62256b1d470f922b2c8e6446cc77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11cd62256b1d470f922b2c8e6446cc77, type: 3}
@@ -3059,6 +3119,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NetworkObjectDummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 692344779980163021, guid: d50563bd895772240b10bde403b76cee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 692344779980163022, guid: d50563bd895772240b10bde403b76cee,
         type: 3}
@@ -3140,6 +3205,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NetworkObjectDummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 692344779980163021, guid: d50563bd895772240b10bde403b76cee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 692344779980163022, guid: d50563bd895772240b10bde403b76cee,
         type: 3}
@@ -3235,6 +3305,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ray Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787346994484839025, guid: ad818c36731146e994540a1896ad8f24,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5888765399538998960, guid: ad818c36731146e994540a1896ad8f24,
         type: 3}
@@ -3382,6 +3457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HAND (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 798881e06ef41da4e8a542c1d55cefc8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 798881e06ef41da4e8a542c1d55cefc8, type: 3}
 --- !u!4 &6097591061438225235 stripped
@@ -3403,6 +3483,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207768339940764841}
     m_Modifications:
+    - target: {fileID: -9195334384663461526, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
         type: 3}
       propertyPath: m_RootOrder
@@ -3473,10 +3558,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6432099818705810534, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4651580333068701978, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3307531278845158470, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 376103152133210332, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: be3083a5f26d4e859d594ecbe632f87e,
         type: 3}
       propertyPath: m_Name
       value: XRControllerLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043511489956387391, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578149583137738979, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619225641134156614, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756583138425666249, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158676226541525647, guid: be3083a5f26d4e859d594ecbe632f87e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be3083a5f26d4e859d594ecbe632f87e, type: 3}
@@ -3497,6 +3632,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NetworkObjectDummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 692344779980163021, guid: d50563bd895772240b10bde403b76cee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 692344779980163022, guid: d50563bd895772240b10bde403b76cee,
         type: 3}
@@ -3592,6 +3732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ray Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787346994484839025, guid: ad818c36731146e994540a1896ad8f24,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4924506573850889901, guid: ad818c36731146e994540a1896ad8f24,
         type: 3}

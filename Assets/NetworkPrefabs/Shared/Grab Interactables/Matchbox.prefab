@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708733115}
   - component: {fileID: 1708733116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Striker (1)
   m_TagString: Matchbox
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: -58967083780555479}
   - component: {fileID: 8530777730616513935}
   - component: {fileID: 2377370915767108126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Matchbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,6 +376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 42713823e9bd30c48b5c9638dcfe8254,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42713823e9bd30c48b5c9638dcfe8254,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -473,6 +478,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: matchbox_inside
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 08b800feb12cb6f4894a13712e8fc09f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 08b800feb12cb6f4894a13712e8fc09f,
         type: 3}
@@ -714,6 +724,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: matchboxCombined
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67dde2760bf87df4197e0dcb80b218b3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67dde2760bf87df4197e0dcb80b218b3, type: 3}

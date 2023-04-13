@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6711007585800144896}
   - component: {fileID: 6711007585800144901}
   - component: {fileID: 6711007585800144900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vynil Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}

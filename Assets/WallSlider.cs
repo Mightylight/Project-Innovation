@@ -15,7 +15,7 @@ public class WallSlider : MonoBehaviour
     private void Start()
     {
         _originalPos = transform.position;
-        SlideWall();
+        //SlideWall();
     }
 
 

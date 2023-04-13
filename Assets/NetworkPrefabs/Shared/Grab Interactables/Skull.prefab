@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7193140349457321123}
   - component: {fileID: 7193140349457321126}
   - component: {fileID: 7193140349457321127}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skull
   m_TagString: Untagged
   m_Icon: {fileID: 0}

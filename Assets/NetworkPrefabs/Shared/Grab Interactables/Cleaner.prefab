@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 3774600979923450874}
   - component: {fileID: 9002476077507514779}
   - component: {fileID: 6923528849706506691}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cleaner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -421,6 +421,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cloth
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7740ffdf9ca857e45aa001beab7e1ba7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7740ffdf9ca857e45aa001beab7e1ba7, type: 3}
