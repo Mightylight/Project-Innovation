@@ -62,7 +62,8 @@ public class PhonographManager : NetworkBehaviour
         int plateNameInt = (int)plateName;
         PlaySong(plateNameInt);
         PlayerSongClientRpc(plateNameInt);
-        ShootKey();
+        if(plateName == VynilPlateName.THE_CORRECT_SONG) ShootKey();
+
     }
     
     public void OnSongLeaving()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaceGhostInsideMinigameState : MinigameState
 {
-    private WallSlider _wallSlider;
+    [SerializeField] private WallSlider _wallSlider;
     public override void OnStateEnter()
     {
         _wallSlider.SlideWall();
