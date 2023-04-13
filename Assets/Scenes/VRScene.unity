@@ -636,6 +636,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5993866286892962036, guid: eadc55c983e84f84e8654e3388a9dd00,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993866286892962036, guid: eadc55c983e84f84e8654e3388a9dd00,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993866286892962036, guid: eadc55c983e84f84e8654e3388a9dd00,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993866286892962036, guid: eadc55c983e84f84e8654e3388a9dd00,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993866286892962036, guid: eadc55c983e84f84e8654e3388a9dd00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 5993866286892962043, guid: eadc55c983e84f84e8654e3388a9dd00,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
@@ -665,7 +690,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1649369491}
     - target: {fileID: 5993866286892962043, guid: eadc55c983e84f84e8654e3388a9dd00,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -675,7 +700,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1649369491}
     - target: {fileID: 5993866286892962043, guid: eadc55c983e84f84e8654e3388a9dd00,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -4167,6 +4192,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1649369489}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1649369491 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4781071433254998137, guid: bac8c44b46fb6184da4d0c167037c551,
+    type: 3}
+  m_PrefabInstance: {fileID: 1649369489}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649369490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84b6d7f099bf6c4f9423b4430a39266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1685012988
 PrefabInstance:
   m_ObjectHideFlags: 0
