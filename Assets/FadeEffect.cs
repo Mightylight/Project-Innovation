@@ -52,8 +52,39 @@ public class FadeEffect : MonoBehaviour
         }
 
         rend.material.color = targetColor;
+        currentCoroutine = null;
         if (loadServerScene) SceneManager.LoadScene("VRScene");
     }
+
+    public void ThereAreNoJumpScares()
+    {
+        if(currentCoroutine == null) currentCoroutine = StartCoroutine(ThereAreNoJumpscareEnum());
+    }
+
+    private IEnumerator ThereAreNoJumpscareEnum()
+    {
+        Color startColor = rend.material.color;
+
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 0.8f);
+
+        float timer = 0.0f;
+
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+
+            float alpha = Mathf.Lerp(startColor.a, targetColor.a, timer / fadeDuration);
+
+            rend.material.color = new Color(startColor.r, startColor.g, startColor.b, alpha);
+
+            yield return null;
+        }
+
+        rend.material.color = targetColor;
+        yield return new WaitForSeconds(4f);
+        currentCoroutine = StartCoroutine(FadeToTransparentEnum());
+    }
+
 
     private IEnumerator FadeToTransparentEnum()
     {
@@ -75,5 +106,6 @@ public class FadeEffect : MonoBehaviour
         }
 
         rend.material.color = targetColor;
+        currentCoroutine = null;
     }
 }

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlaceGhostInsideMinigameState : MinigameState
 {
+    [SerializeField] private WallSlider _wallSlider;
     public override void OnStateEnter()
     {
-        //throw new System.NotImplementedException();
+        _wallSlider.SlideWall();
     }
 
     public override void OnStateExit()
     {
-        //TO ENTER NEXT STATE, SAY PHRASE
         // throw new System.NotImplementedException();
     }
 }
