@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8746c20c3ac744b965c636277c92e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintObjects: []
+  _timeInSeconds: 0
 --- !u!1 &40451244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,7 +2488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270931489}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -5, y: 0.776, z: -1.1007093}
+  m_LocalPosition: {x: -5, y: 0.7732343, z: -1.1007093}
   m_LocalScale: {x: 0.17646372, y: 1, z: 0.28187656}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2569,33 +2571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe5846da82ce8f47b63a59fff0defed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  originalPos: {x: -5, y: 0.776, z: -1.100709}
-  targetPos: {x: -5, y: -0.27, z: -1.100709}
-  speed: 1
+  _targetPos: {x: -5, y: -0.33, z: -1.1007093}
+  _duration: 5
 --- !u!114 &1270931495
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlaceGhostInsideMinigameState : MinigameState
 {
+    private WallSlider _wallSlider;
     public override void OnStateEnter()
     {
-        //throw new System.NotImplementedException();
+        _wallSlider.SlideWall();
     }
 
     public override void OnStateExit()
