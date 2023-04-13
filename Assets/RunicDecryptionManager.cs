@@ -19,7 +19,7 @@ public class RunicDecryptionManager : NetworkBehaviour
 
     public void HideText()
     {
-        serverText.SetActive(true);
+        serverText.SetActive(false);
         ShowTextClientRpc(false);
     }
 
