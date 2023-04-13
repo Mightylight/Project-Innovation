@@ -100,7 +100,6 @@ public class MinigameFSM : MonoBehaviour
             // NetworkProtocolManager.Instance.SetClueCooldownClientRpc(newcountdown);
             //
             StartCoroutine(HintCooldown());
-            NerworkProtocolManager.Instance.ClueNotReadyClientRpc();
         }
         else
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class WallSlider : NetworkBehaviour
+public class WallSlider : MonoBehaviour
 {
 
 
