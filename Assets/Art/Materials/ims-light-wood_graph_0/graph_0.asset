@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: graph_0
   m_EditorClassIdentifier: 
   AssetPath: Assets/Art/Materials/ims-light-wood.sbsar
-  OutputPath: Assets/Art/Materials/ims-light-wood_graph_0
+  OutputPath: Assets\Art\Materials\ims-light-wood_graph_0
   RawData: {fileID: -244192453324840774, guid: 4a7888250f1227c4baf0f6f6bac01cbb, type: 3}
   Name: graph_0
   IsRoot: 1
   FlagedForDelete: 0
-  GUID: f83d6a3e-a6f4-4ce3-8735-b4d27a0a551b
+  GUID: 6c027e54-5427-4c47-8caf-2afeab98b132
   Index: 0
   Input:
-  - rid: 21260459477303348
-  - rid: 21260459477303349
+  - rid: 6403505447907360802
+  - rid: 6403505447907360803
   Output:
   - Index: 0
     VirtualOutputIndex: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
       Index: 13
       Type: 8
       Channel: baseColor
-    OutputTexture: {fileID: 2800000, guid: 339e3270393dd3844b67123cbfe954d7, type: 3}
+    OutputTexture: {fileID: 2800000, guid: b71517c495fd59e4ba30fb1e5f6aa3ce, type: 3}
     sRGB: 1
     IsVirtual: 0
     IsAlphaAssignable: 1
@@ -256,7 +256,7 @@ MonoBehaviour:
       Index: 14
       Type: 8
       Channel: normal
-    OutputTexture: {fileID: 2800000, guid: c1558ffa3cd622643ae66367d7102b9e, type: 3}
+    OutputTexture: {fileID: 2800000, guid: a69a301ad6d597d4f8253534714ae35f, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsAlphaAssignable: 0
@@ -288,7 +288,7 @@ MonoBehaviour:
       Index: 16
       Type: 8
       Channel: metallic
-    OutputTexture: {fileID: 2800000, guid: 7ff5a0b5c56a9164ca6519e56dd4d73d, type: 3}
+    OutputTexture: {fileID: 2800000, guid: f37bf2d3b4201294781245624edb961c, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsAlphaAssignable: 1
@@ -320,7 +320,7 @@ MonoBehaviour:
       Index: 18
       Type: 8
       Channel: ambientOcclusion
-    OutputTexture: {fileID: 2800000, guid: cf66b02c57576ba42a64877ca529fb2e, type: 3}
+    OutputTexture: {fileID: 2800000, guid: fd3f98c035ef45745851eb96ea82384b, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsAlphaAssignable: 1
@@ -352,7 +352,7 @@ MonoBehaviour:
       Index: 20
       Type: 8
       Channel: height
-    OutputTexture: {fileID: 2800000, guid: 3a885183455a85f4ca407a1ab3c95fad, type: 3}
+    OutputTexture: {fileID: 2800000, guid: 848d6a7b9bb663f4e8e1cb12a2a376e5, type: 3}
     sRGB: 1
     IsVirtual: 0
     IsAlphaAssignable: 1
@@ -369,7 +369,7 @@ MonoBehaviour:
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
-  OutputMaterial: {fileID: 2100000, guid: 5eea89ad030c989468263e1faf2a61dd, type: 2}
+  OutputMaterial: {fileID: 2100000, guid: 4df24ae00be9aed4c98389090b23284f, type: 2}
   DefaultPreset: " <sbspreset pkgurl=\"pkg://IMS_Light_Wood\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"1205826211\" type=\"8\" value=\"10,10\" />\n
     </sbspreset>\n"
@@ -379,7 +379,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 21260459477303348
+    - rid: 6403505447907360802
       type: {class: SubstanceInputInt2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 0
@@ -398,7 +398,7 @@ MonoBehaviour:
           SliderClamp: 0
           EnumValueCount: 0
           EnumValues: []
-    - rid: 21260459477303349
+    - rid: 6403505447907360803
       type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 1
