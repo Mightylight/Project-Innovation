@@ -9,6 +9,12 @@ public class DummyNetworkObject : MonoBehaviour
     [SerializeField] GameObject networkPrefabToSpawn;
     [Tooltip("Enable this to hide the object in the server")]
     [SerializeField] bool clientOnly = false;
+
+
+    [SerializeField] bool copyPosition = true;
+    [SerializeField] bool copyRotation = true;
+    [SerializeField] bool copyScale = true
+        ;
     void Start()
     {
         if(NetworkManager.Singleton == null)
@@ -29,8 +35,9 @@ public class DummyNetworkObject : MonoBehaviour
         //TODO: nullcheck
         GameObject obj = Instantiate(networkPrefabToSpawn);
         obj.GetComponent<NetworkObject>().Spawn();
-        obj.transform.position = transform.position;
-        obj.transform.rotation= transform.rotation;
+        if(copyPosition)obj.transform.position = transform.position;
+        if(copyRotation)obj.transform.rotation= transform.rotation;
+        if(copyScale)obj.transform.localScale = transform.lossyScale;
         if (clientOnly) HideObject(obj);
         ObjectTracker tracker = obj.GetComponent<ObjectTracker>();
         if (tracker != null) tracker.SetTrackerObj(this.transform.parent);

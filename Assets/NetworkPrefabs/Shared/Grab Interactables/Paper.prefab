@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7661606060486357659}
   - component: {fileID: 7661606060486357658}
   - component: {fileID: 7661606060486357861}
-  - component: {fileID: 7661606060486357860}
   - component: {fileID: 7661606060486357657}
   - component: {fileID: 7661606060486357656}
   - component: {fileID: 7661606060486357662}
@@ -141,6 +140,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7661606060486357659}
+        m_TargetAssemblyTypeName: PaperManager, Assembly-CSharp
+        m_MethodName: OnMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -223,38 +234,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &7661606060486357860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7661606060486357857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e82f45ccfb8f6c4418d9660d179b8f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BeginThreshold: 0.25
-  m_EndThreshold: 0.2
-  m_OnBegin:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7661606060486357659}
-        m_TargetAssemblyTypeName: PaperManager, Assembly-CSharp
-        m_MethodName: OnMovement
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &7661606060486357657
 MonoBehaviour:
   m_ObjectHideFlags: 0
