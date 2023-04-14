@@ -269,6 +269,16 @@ MonoBehaviour:
     vinylPlateName: 1
   - music: {fileID: 8300000, guid: 77d00f1a54454264eaa6dcd978667f11, type: 3}
     vinylPlateName: 2
+  - music: {fileID: 8300000, guid: 6212badb7fa9904418c1a6fd8d972feb, type: 3}
+    vinylPlateName: 3
+  - music: {fileID: 8300000, guid: f82d3bd2c8ed45d4da4a6a6469400f2e, type: 3}
+    vinylPlateName: 4
+  - music: {fileID: 8300000, guid: 938e708b322cd2448ad5c1f5757b51dd, type: 3}
+    vinylPlateName: 5
+  - music: {fileID: 8300000, guid: 4cb01329dc5e0904aabd53ddbaa6e3d7, type: 3}
+    vinylPlateName: 6
+  - music: {fileID: 8300000, guid: 66332124ca520b84b9d23d27bffeda18, type: 3}
+    vinylPlateName: 7
   socket: {fileID: 5865562025193591329}
   keyPrefab: {fileID: 6957800938272457974, guid: 68f5bbc40b74277468df6046e7a8328e,
     type: 3}
