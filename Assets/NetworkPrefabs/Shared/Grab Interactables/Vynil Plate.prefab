@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6711007585800144896}
   - component: {fileID: 6711007585800144901}
   - component: {fileID: 6711007585800144900}
+  - component: {fileID: 6536127223245540659}
   m_Layer: 8
   m_Name: Vynil Plate
   m_TagString: Untagged
@@ -271,3 +272,17 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &6536127223245540659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6711007585800144899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bea7d7f8360324ba00bacc7f4a9726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalMaterial: {fileID: 0}
+  changedMaterial: {fileID: 0}
