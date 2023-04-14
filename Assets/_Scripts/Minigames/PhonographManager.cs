@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -17,6 +18,7 @@ public class PhonographManager : NetworkBehaviour
     [SerializeField] GameObject keyPrefab;
     [SerializeField] Transform shootFrom;
     [SerializeField] float shootStrenght = 5;
+    [SerializeField] private AudioSource _audioSource;
     bool keyShot = false;
 
     public void Awake()
@@ -54,6 +56,7 @@ public class PhonographManager : NetworkBehaviour
         key.GetComponent<Rigidbody>().velocity = key.transform.forward * shootStrenght;
         key.GetComponent<NetworkObject>().Spawn();
         keyShot = true;
+        if(_audioSource != null) _audioSource.Play();
     }
 
     public void OnSongEntered()

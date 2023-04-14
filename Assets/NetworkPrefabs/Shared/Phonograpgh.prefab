@@ -223,8 +223,8 @@ GameObject:
   - component: {fileID: 5865562026014835795}
   - component: {fileID: 5865562026014835793}
   - component: {fileID: 5865562026014835794}
-  - component: {fileID: 5865562026014835792}
   - component: {fileID: 7005137803257700360}
+  - component: {fileID: 1239796866006375106}
   m_Layer: 0
   m_Name: Phonograpgh
   m_TagString: Untagged
@@ -284,6 +284,7 @@ MonoBehaviour:
     type: 3}
   shootFrom: {fileID: 8303775251098343936}
   shootStrenght: 10
+  _audioSource: {fileID: 1239796866006375106}
 --- !u!114 &5865562026014835794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +301,20 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!82 &5865562026014835792
+--- !u!65 &7005137803257700360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5865562026014835796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5818776, y: 0.4915079, z: 0.6243454}
+  m_Center: {x: -0.029400289, y: 0.25424606, z: 0.13338467}
+--- !u!82 &1239796866006375106
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,7 +324,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fd3bbeb7ebef46847ba32e5ba924fde6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -320,7 +334,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 250
+  MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -356,7 +370,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -396,19 +410,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &7005137803257700360
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5865562026014835796}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5818776, y: 0.4915079, z: 0.6243454}
-  m_Center: {x: -0.029400289, y: 0.25424606, z: 0.13338467}
 --- !u!1 &8125711943877602108
 GameObject:
   m_ObjectHideFlags: 0
