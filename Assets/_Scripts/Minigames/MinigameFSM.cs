@@ -10,6 +10,11 @@ public class MinigameFSM : MonoBehaviour
     [SerializeField] private List<MinigameState> _minigameStates;
     [SerializeField] private GameObject hintGlowPrefab;
     [SerializeField] private float _hintTimeInSeconds;
+    [SerializeField] private float _hintCooldown;
+    [SerializeField] private bool _isClueOnCooldown;
+    [SerializeField] private float _hintCooldownTimerMultiplier;
+
+
 
     // [SerializeField] private HintGlowManager 
 
@@ -81,7 +86,7 @@ public class MinigameFSM : MonoBehaviour
 
     public void GetClue()
     {
-        if (true)//TODO:: if cooldown is done
+        if (!_isClueOnCooldown)//TODO:: if cooldown is done
         {
             foreach (GameObject hintObj in _currentState.hintObjects)
             {
@@ -94,16 +99,20 @@ public class MinigameFSM : MonoBehaviour
             // 
             // NetworkProtocolManager.Instance.SetClueCooldownClientRpc(newcountdown);
             //
+            StartCoroutine(HintCooldown());
         }
         else
         {
             NerworkProtocolManager.Instance.ClueNotReadyClientRpc();
         }
     }
-
-    //TODO: Cooldown needs to increase each time it gets requested? As in twice as long the second or something?
-    //TODO: Cooldown Enumerator
-
-
+    
+    private IEnumerator HintCooldown()
+    {
+        _hintCooldown *= _hintCooldownTimerMultiplier;
+        _isClueOnCooldown = true;
+        yield return new WaitForSeconds(_hintCooldown);
+        _isClueOnCooldown = false;
+    }
 }
 
