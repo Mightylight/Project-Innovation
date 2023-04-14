@@ -16,10 +16,11 @@ namespace _Scripts.Minigames.LighterMinigame
         public void OnCandleLit(Candle pCandle)
         {
             if (NetworkManager.Singleton.IsClient) return;
+            if (!_candles.Contains(pCandle)) return;
             if (_litCandles.Contains(pCandle)) return;
             
             _litCandles.Add(pCandle);
-            pCandle.LightCandle();
+            //pCandle.LightCandle();
 
             if (_litCandles.Count == _candles.Count)
             {

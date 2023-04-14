@@ -8,16 +8,16 @@ namespace _Scripts.Minigames.LighterMinigame
         [SerializeField] float _threshold = 0.1f;
         [SerializeField] GameObject candleFlame;
         [SerializeField] ParticleSystem particlesystem;
-        [SerializeField] Animator animator;
+        //[SerializeField] Animator animator;
 
 
-        private void Light()
+        public void Light()
         {
             _isLit = true;
             candleFlame.SetActive(true);
             particlesystem.Play();
-            animator.enabled = true;
-            animator.Play("fireLight");
+            //animator.enabled = true;
+            //animator.Play("fireLight");
         }
 
         public void MatchBoxExit()
@@ -36,7 +36,7 @@ namespace _Scripts.Minigames.LighterMinigame
             _isLit = false;
             candleFlame.SetActive(false);
             particlesystem.Stop();
-            animator.enabled = false;
+            //animator.enabled = false;
         }
     }
 }
