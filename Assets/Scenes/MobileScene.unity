@@ -928,6 +928,41 @@ MonoBehaviour:
       SourceHashToOverride: 2314897395
       OverridingTargetPrefab: {fileID: 439014797033148588, guid: 6fe2dd94c43c1ed4b9eed18fa4df2657,
         type: 3}
+    - Override: 0
+      Prefab: {fileID: 7382113269395907278, guid: c4fc3d6525540904c9e3e03aa3841cfc,
+        type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 2314897395
+      OverridingTargetPrefab: {fileID: 439014797033148588, guid: 6fe2dd94c43c1ed4b9eed18fa4df2657,
+        type: 3}
+    - Override: 0
+      Prefab: {fileID: 3794281423904619077, guid: d02a6898c93c471499c565530ce9c81e,
+        type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 2314897395
+      OverridingTargetPrefab: {fileID: 439014797033148588, guid: 6fe2dd94c43c1ed4b9eed18fa4df2657,
+        type: 3}
+    - Override: 0
+      Prefab: {fileID: 1977519442273415092, guid: bfd77cde598141d4fae9d0f65f839e2b,
+        type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 2314897395
+      OverridingTargetPrefab: {fileID: 439014797033148588, guid: 6fe2dd94c43c1ed4b9eed18fa4df2657,
+        type: 3}
+    - Override: 0
+      Prefab: {fileID: 2233090571733770032, guid: bd02e9d7004d32649b5d935a0d782cbd,
+        type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 2314897395
+      OverridingTargetPrefab: {fileID: 439014797033148588, guid: 6fe2dd94c43c1ed4b9eed18fa4df2657,
+        type: 3}
+    - Override: 0
+      Prefab: {fileID: 9171488249601876430, guid: c09a395e3114c714ead7b778425f577d,
+        type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 2314897395
+      OverridingTargetPrefab: {fileID: 439014797033148588, guid: 6fe2dd94c43c1ed4b9eed18fa4df2657,
+        type: 3}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
