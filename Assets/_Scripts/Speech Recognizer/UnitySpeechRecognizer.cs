@@ -9,10 +9,10 @@ using UnityEngine.Windows.Speech;
 
 public class UnitySpeechRecognizer : MonoBehaviour
 {
-#if !UNITY_ANDROID
     [SerializeField]
     //private string[] m_Keywords;
     private SpeechKeyword[] keywords;
+#if !UNITY_ANDROID
     string[] keywordValues;
     private KeywordRecognizer m_Recognizer;
     Dictionary<string, SpeechKeyword> keywordDict = new();
