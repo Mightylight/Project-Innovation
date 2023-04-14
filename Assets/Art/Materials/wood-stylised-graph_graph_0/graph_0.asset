@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: graph_0
   m_EditorClassIdentifier: 
   AssetPath: Assets/Art/Materials/wood-stylised-graph.sbsar
-  OutputPath: Assets/Art/Materials/wood-stylised-graph_graph_0
+  OutputPath: Assets\Art\Materials\wood-stylised-graph_graph_0
   RawData: {fileID: -244192453324840774, guid: ff4c81fcfff7afb42a7140a24b942ccd, type: 3}
   Name: graph_0
   IsRoot: 1
   FlagedForDelete: 0
-  GUID: ab2bd95d-8880-42a7-bacc-7e317d1989ce
+  GUID: 4967d65e-99c5-49c7-b2d6-f6bb468acc39
   Index: 0
   Input:
-  - rid: 21260486464765954
-  - rid: 21260486464765955
-  - rid: 21260486464765956
+  - rid: 6403505472855080972
+  - rid: 6403505472855080973
+  - rid: 6403505472855080974
   Output:
   - Index: 0
     VirtualOutputIndex: 6
@@ -140,7 +140,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 21260486464765954
+    - rid: 6403505472855080972
       type: {class: SubstanceInputInt2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
           SliderClamp: 0
           EnumValueCount: 0
           EnumValues: []
-    - rid: 21260486464765955
+    - rid: 6403505472855080973
       type: {class: SubstanceInputFloat2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 1
@@ -179,7 +179,7 @@ MonoBehaviour:
           SliderClamp: 0
           EnumValueCount: 0
           EnumValues: []
-    - rid: 21260486464765956
+    - rid: 6403505472855080974
       type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 2
