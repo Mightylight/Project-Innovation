@@ -3140,6 +3140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692344779980163022, guid: d50563bd895772240b10bde403b76cee,
         type: 3}
+      propertyPath: clientOnly
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 692344779980163022, guid: d50563bd895772240b10bde403b76cee,
+        type: 3}
       propertyPath: networkPrefabToSpawn
       value: 
       objectReference: {fileID: 2778211476330835999, guid: 16efa69eefc3c0444895becee5da88c3,

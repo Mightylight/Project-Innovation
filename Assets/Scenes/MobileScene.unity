@@ -4444,7 +4444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bde7570c50d4c4a81377ef31337d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtyTexture: {fileID: 2800000, guid: 8b794183616da6c43945ffaf8c4aa78c, type: 3}
+  dirtyTexture: {fileID: 2800000, guid: 48a30e0482ca197408bb0a72c052e063, type: 3}
   interactableTexture: {fileID: 2800000, guid: a70c4f2ab5bac034ab5731e272df9a53, type: 3}
   cleanTexture: {fileID: 2800000, guid: de8d10b1b1431674d9cc624a0890d410, type: 3}
   brush: {fileID: 2800000, guid: 83259a198b18e82499f0359543cd3169, type: 3}
