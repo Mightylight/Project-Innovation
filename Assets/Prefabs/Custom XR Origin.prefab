@@ -907,7 +907,7 @@ MonoBehaviour:
   m_Camera: {fileID: 651659977522376481}
   m_OriginBaseGameObject: {fileID: 651659979052339740}
   m_CameraFloorOffsetObject: {fileID: 651659979083283990}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.1176
 --- !u!114 &7199875929899204440
 MonoBehaviour:
@@ -1090,23 +1090,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffe63fbd1f032146ba4f834b388ca86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keywords:
-  - keyword: There are no jumpscares
-    onRecognized:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6890707630084392269}
-          m_TargetAssemblyTypeName: FadeEffect, Assembly-CSharp
-          m_MethodName: ThereAreNoJumpScares
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &651659979083283990
 GameObject:
   m_ObjectHideFlags: 0

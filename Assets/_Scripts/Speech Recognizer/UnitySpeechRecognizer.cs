@@ -1,13 +1,15 @@
-#if !UNITY_ANDROID
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+#if !UNITY_ANDROID
 using UnityEngine.Windows.Speech;
-
+#endif
 
 public class UnitySpeechRecognizer : MonoBehaviour
 {
+#if !UNITY_ANDROID
     [SerializeField]
     //private string[] m_Keywords;
     private SpeechKeyword[] keywords;
@@ -40,5 +42,5 @@ public class UnitySpeechRecognizer : MonoBehaviour
         builder.AppendFormat("\tDuration: {0} seconds{1}", args.phraseDuration.TotalSeconds, Environment.NewLine);
         Debug.Log(builder.ToString());
     }
-}
 #endif
+}
