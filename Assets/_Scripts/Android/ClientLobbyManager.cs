@@ -16,6 +16,8 @@ public class ClientLobbyManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI userFeedbackTextobj;
     [SerializeField] Button joinButton;
 
+    [SerializeField] TextMeshProUGUI joiningText;
+
     public void Start()
     {
         ipInputField.text = defaultIP;
@@ -30,15 +32,22 @@ public class ClientLobbyManager : MonoBehaviour
         ipInputField.text,  // The IP address is a string
         (ushort)defaultPort // The port number is an unsigned short
         );
+        joiningText.text = $"TRYING TO JOIN SERVER ON\n{ipInputField.text}";
         NetworkManager.Singleton.StartClient();
         //joinButton.interactable = false;
         //userFeedbackTextobj.text = "Trying to join...";
     }
 
+    public void StopJoin()
+    {
+        NetworkManager.Singleton.Shutdown();
+        CanvasManager.Instance.GetComponent<MobileCanvasFSM>().LoadState(MobileState.MAIN_MENU);
+    }
+
     public void OnServerJoined(ulong clientID)
     {
         CanvasManager.Instance.PhoneConsoleMessage($" Connected as client with id {clientID}!");
-        CanvasManager.Instance.GetComponent<MobileCanvasFSM>().LoadState(MobileState.PLAYING);
+        CanvasManager.Instance.GetComponent<MobileCanvasFSM>().LoadState(MobileState.TUTORIAL);
     }
 
     public void OnClientDisconnected(ulong clientID)

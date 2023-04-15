@@ -108,4 +108,43 @@ public class FadeEffect : MonoBehaviour
         rend.material.color = targetColor;
         currentCoroutine = null;
     }
+
+    public void FadeToBlackAndWin()
+    {
+        if (currentCoroutine != null) StopCoroutine(currentCoroutine);
+        currentCoroutine = StartCoroutine(EnumEndOfGame(true));
+    }
+
+    public void FadeToBlackAndLose()
+    {
+        if (currentCoroutine != null) StopCoroutine(currentCoroutine);
+        currentCoroutine = StartCoroutine(EnumEndOfGame(true));
+    }
+
+    private IEnumerator EnumEndOfGame(bool isWin = false)
+    {
+        Color startColor = rend.material.color;
+
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 1f);
+
+        float timer = 0.0f;
+
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+
+            float alpha = Mathf.Lerp(startColor.a, targetColor.a, timer / fadeDuration);
+
+            rend.material.color = new Color(startColor.r, startColor.g, startColor.b, alpha);
+
+            yield return null;
+        }
+
+        rend.material.color = targetColor;
+        currentCoroutine = null;
+        SceneManager.LoadScene("VREndScene");
+        FadeToTransparent();
+        if(isWin)VRPlayerManager.Instance.ui.ShowWin();
+        else VRPlayerManager.Instance.ui.ShowLose();
+    }
 }

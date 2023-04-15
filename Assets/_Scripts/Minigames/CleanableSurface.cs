@@ -66,7 +66,6 @@ public class CleanableSurface : MonoBehaviour
     }
     private void OnDisable()
     {
-        Debug.Log("runs");
         interactableTexture.SetPixels(dirtyTexture.GetPixels());
         interactableTexture.Apply();
     }

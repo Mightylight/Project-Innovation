@@ -95,7 +95,7 @@ namespace _Scripts.Minigames.LighterMinigame
         {
             LightCandle();
             if (NetworkManager.Singleton.IsClient) return;
-            MinigameFSM.Instance.GetComponent<LighterMinigameLogic>().OnCandleLit(this);
+            MinigameFSM.Instance.GetComponentInChildren<LighterMinigameLogic>().OnCandleLit(this);
         }
     }
 }

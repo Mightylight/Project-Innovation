@@ -1,3 +1,4 @@
+using _Scripts.Minigames.WindowCleanMinigame;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Netcode;
@@ -35,7 +36,9 @@ namespace _Scripts.Minigames.LighterMinigame
                 ResetCandles();
                 return;
             }
-
+            //Catching up to the correct state!
+            if (MinigameFSM.Instance.CurrentState is ReadStartPaperMinigameState) MinigameFSM.Instance.NextState();
+            if (MinigameFSM.Instance.CurrentState is WindowCleanMinigameState) MinigameFSM.Instance.NextState();
             MinigameFSM.Instance.NextState();
             Debug.Log("Correct!");
         }

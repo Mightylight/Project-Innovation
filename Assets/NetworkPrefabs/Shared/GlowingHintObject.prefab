@@ -45,7 +45,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.03076417, g: 0.56012774, b: 0.5754717, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325454c8a91121f48a4f37d246a872f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeAlive: 10
+  timeAlive: 15
 --- !u!114 &3099207379879957940
 MonoBehaviour:
   m_ObjectHideFlags: 0

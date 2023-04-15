@@ -47,6 +47,9 @@ public class CameraTouchControls : MonoBehaviour
         original = transform.rotation;
         EnableGyro();
         CanvasManager.Instance.fixButton.onClick.AddListener(() => EnableGyro());
+        CanvasManager.Instance.startGyroButton.onClick.AddListener(() => EnableGyro());
+        CanvasManager.Instance.toggleGyroButton.onClick.AddListener(() => ToggleGyro());
+
     }
     public void EnableGyro()
     {
@@ -60,6 +63,13 @@ public class CameraTouchControls : MonoBehaviour
     {
         useGyro = false;
     }
+
+    public void ToggleGyro()
+    {
+        ResetOffset();
+        useGyro = !useGyro;
+    }
+
 
     private static Quaternion GyroToUnity(Quaternion q)
     {
@@ -89,7 +99,7 @@ public class CameraTouchControls : MonoBehaviour
         HandleOrbit();
 
         if (useGyro) gyroRotation = offset * GyroToUnity(_gyro.attitude);
-        desiredRotation = Quaternion.Euler(yDeg, xDeg, 0) * gyroRotation;
+        desiredRotation = Quaternion.Euler(0, xDeg, -yDeg) * gyroRotation;
         currentRotation = transform.rotation;
         rotation = Quaternion.Lerp(currentRotation, desiredRotation, Time.deltaTime * zoomDampening);
         transform.rotation = rotation;

@@ -9,6 +9,11 @@ public class CanvasManager : MonoBehaviour
 
     [SerializeField] GameObject phoneConsole;
     public Button fixButton;
+    public Button toggleGyroButton;
+    public Button startGyroButton;
+
+    [SerializeField] Button clueButton;
+    [SerializeField] TextMeshProUGUI clueButtonText;
 
     private static CanvasManager instance;
     public static CanvasManager Instance
@@ -49,10 +54,27 @@ public class CanvasManager : MonoBehaviour
 
     }
 
+    public void SetClueCountdown(float countdown)
+    {
+        clueButton.interactable = false;
+        StartCoroutine(ClueCountDown(countdown));
+    }
+
     public void OnGetClueButton()
     {
         NerworkProtocolManager.Instance.RequestClueServerRpc();
     }
 
+    IEnumerator ClueCountDown(float time)
+    {
 
+        while(time > 0)
+        {
+            time--;
+            clueButtonText.text = $"{time}";
+           yield return new WaitForSeconds(1f);
+        }
+        clueButton.interactable = true;
+        clueButtonText.text = "Get Clue";
+    }
 }

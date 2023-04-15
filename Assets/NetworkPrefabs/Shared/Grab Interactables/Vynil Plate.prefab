@@ -16,7 +16,9 @@ GameObject:
   - component: {fileID: 6711007585800144896}
   - component: {fileID: 6711007585800144901}
   - component: {fileID: 6711007585800144900}
-  - component: {fileID: 6536127223245540659}
+  - component: {fileID: 7472664410552204950}
+  - component: {fileID: 1171643978584809670}
+  - component: {fileID: 2419351267652460222}
   m_Layer: 8
   m_Name: Vynil Plate
   m_TagString: Plate
@@ -272,7 +274,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &6536127223245540659
+--- !u!114 &7472664410552204950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,8 +283,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 6711007585800144899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bea7d7f8360324ba00bacc7f4a9726, type: 3}
+  m_Script: {fileID: 11500000, guid: 84a15967ec1b41f4a9ae45caf4921d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalMaterial: {fileID: 0}
-  changedMaterial: {fileID: 0}
+  glowMat: {fileID: 2100000, guid: d163eaa1134a35a4db2d03dff8b48023, type: 2}
+--- !u!114 &1171643978584809670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6711007585800144899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
+--- !u!114 &2419351267652460222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6711007585800144899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

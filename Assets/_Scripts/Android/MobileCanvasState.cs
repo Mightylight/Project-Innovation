@@ -25,4 +25,4 @@ public class MobileCanvasState : MonoBehaviour
         }
     }
 }
-[System.Serializable] public enum MobileState { MAIN_MENU, LOGIN, JOINING, PLAYING, DISCONNECTED }
+[System.Serializable] public enum MobileState { MAIN_MENU, LOGIN, JOINING, TUTORIAL, PLAYING, DISCONNECTED, WON, LOST }
