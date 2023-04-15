@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3794281423904619074}
   m_Layer: 8
   m_Name: Vynil Plate house-with-ghost
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

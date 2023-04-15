@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1977519442273415091}
   m_Layer: 8
   m_Name: Vynil Plate inside-serial-killer
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
