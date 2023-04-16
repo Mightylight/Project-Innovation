@@ -43,8 +43,7 @@ namespace _Scripts.Minigames.LighterMinigame
         public void LightVisual(bool pIsLit = true)
         {
             //shiny flamy stuffy
-            _isLit = pIsLit;
-            isLitNetwork.Value = pIsLit;
+
             if (pIsLit)
             {
                 candleFlame.SetActive(true);
@@ -61,6 +60,7 @@ namespace _Scripts.Minigames.LighterMinigame
         public void Light()
         {
             _isLit = true;
+            isLitNetwork.Value = _isLit;
             candleFlame.SetActive(true);
             particlesystem.Play();
             //animator.enabled = true;
@@ -81,6 +81,7 @@ namespace _Scripts.Minigames.LighterMinigame
         {
             if (!_isLit) return;
             _isLit = false;
+            isLitNetwork.Value = _isLit;
             candleFlame.SetActive(false);
             particlesystem.Stop();
             //animator.enabled = false;
