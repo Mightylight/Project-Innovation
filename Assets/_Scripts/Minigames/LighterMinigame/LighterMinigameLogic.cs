@@ -49,6 +49,7 @@ namespace _Scripts.Minigames.LighterMinigame
             {
                 candle.ResetCandle();
             }
+            GetComponent<AudioSource>().Play();
             _litCandles.Clear();
         }
     }

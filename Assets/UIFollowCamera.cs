@@ -35,11 +35,15 @@ public class UIFollowCamera : MonoBehaviour
     public void ShowLose()
     {
         loseUI.SetActive(false);
+        gameObject.SetActive(true);
+        VRPlayerManager.Instance.ToggleRays(true);
     }
 
     public void ShowWin()
     {
         winUI.SetActive(true);
+        gameObject.SetActive(true);
+        VRPlayerManager.Instance.ToggleRays(true);
     }
 
 
