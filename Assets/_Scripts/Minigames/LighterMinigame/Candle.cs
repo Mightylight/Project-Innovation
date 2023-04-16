@@ -19,10 +19,12 @@ namespace _Scripts.Minigames.LighterMinigame
             particaleSystem = GetComponentInChildren<ParticleSystem>();
             //animator = GetComponentInChildren<Animator>();
             light = GetComponentInChildren<Light>();
-            if(!_isLit) ResetCandle();
+        }
+        private void Start()
+        {
+            if (!_isLit) ResetCandle();
             else LightCandle();
             isLitNetwork.Value = _isLit;
-
         }
 
         public override void OnNetworkSpawn()
