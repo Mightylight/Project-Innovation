@@ -22,6 +22,8 @@ public class WallSlider : MonoBehaviour
     public void SlideWall()
     {
         transform.DOMove(_targetPos, _duration).SetEase(Ease.InOutQuad);
+        TryGetComponent(out AudioSource source);
+        source.Play();
     }
 
     

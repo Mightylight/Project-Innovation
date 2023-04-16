@@ -97,4 +97,13 @@ public class VRPlayerManager : MonoBehaviour
         }
     }
 
+    public void OnGameWin()
+    {
+        fadeEffect.FadeToBlackAndWin();
+    }
+    public void OnGameLost()
+    {
+        fadeEffect.FadeToBlackAndLose();
+    }
+
 }

@@ -9,4 +9,4 @@ public class VynilPlate
    [SerializeField] public VynilPlateName vinylPlateName;
 }
 
-[System.Serializable]  public enum VynilPlateName { AMONGUS, L_CASINO, THE_CORRECT_SONG }
+[System.Serializable]  public enum VynilPlateName { AMONGUS, L_CASINO, THE_CORRECT_SONG, DARK_MYSTERY, HOUSE_WITH_GHOST, INSIDE_SERIAL_KILLER, LID, SPELLCRAFT}

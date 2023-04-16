@@ -43,4 +43,18 @@ public class GameManager : MonoBehaviour
         playerManager.transform.rotation = vrPlayerSpawn.rotation;
         //TODO: Start timer on clock!
     }
+
+    public void WinGame()
+    {
+        playerManager.OnGameWin();
+        NerworkProtocolManager.Instance.WinGameClientRpc();
+        Debug.Log("Won the game!");
+    }
+
+    public void LoseGame()
+    {
+        playerManager.OnGameLost();
+        NerworkProtocolManager.Instance.LoseGameClientRpc();
+        Debug.Log("Lost the game!");
+    }
 }

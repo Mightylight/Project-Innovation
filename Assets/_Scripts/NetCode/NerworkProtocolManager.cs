@@ -40,7 +40,26 @@ public class NerworkProtocolManager : NetworkBehaviour
         //Do stuff on clien
     }
 
+    [ClientRpc]
+    public void SetClueCooldownClientRpc(float time)
+    {
+        CanvasManager.Instance.SetClueCountdown(time);
+    }
 
+
+    [ClientRpc]
+    public void WinGameClientRpc()
+    {
+        NetworkManager.Singleton.Shutdown();
+        CanvasManager.Instance.GetComponent<MobileCanvasFSM>().LoadState(MobileState.WON);
+    }
+
+    [ClientRpc]
+    public void LoseGameClientRpc()
+    {
+        NetworkManager.Singleton.Shutdown();
+        CanvasManager.Instance.GetComponent<MobileCanvasFSM>().LoadState(MobileState.LOST);
+    }
 
 
 }

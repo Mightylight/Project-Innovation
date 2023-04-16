@@ -1,3 +1,4 @@
+using _Scripts.Minigames.WindowCleanMinigame;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Netcode;
@@ -16,10 +17,11 @@ namespace _Scripts.Minigames.LighterMinigame
         public void OnCandleLit(Candle pCandle)
         {
             if (NetworkManager.Singleton.IsClient) return;
+            if (!_candles.Contains(pCandle)) return;
             if (_litCandles.Contains(pCandle)) return;
             
             _litCandles.Add(pCandle);
-            pCandle.LightCandle();
+            //pCandle.LightCandle();
 
             if (_litCandles.Count == _candles.Count)
             {
@@ -34,7 +36,9 @@ namespace _Scripts.Minigames.LighterMinigame
                 ResetCandles();
                 return;
             }
-
+            //Catching up to the correct state!
+            if (MinigameFSM.Instance.CurrentState is ReadStartPaperMinigameState) MinigameFSM.Instance.NextState();
+            if (MinigameFSM.Instance.CurrentState is WindowCleanMinigameState) MinigameFSM.Instance.NextState();
             MinigameFSM.Instance.NextState();
             Debug.Log("Correct!");
         }
@@ -45,6 +49,7 @@ namespace _Scripts.Minigames.LighterMinigame
             {
                 candle.ResetCandle();
             }
+            GetComponent<AudioSource>().Play();
             _litCandles.Clear();
         }
     }

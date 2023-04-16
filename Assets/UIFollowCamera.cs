@@ -11,6 +11,8 @@ public class UIFollowCamera : MonoBehaviour
     [SerializeField] TextMeshProUGUI textMesh;
     public GameObject mainMenuUI;
     public GameObject loadingUI;
+    public GameObject winUI;
+    public GameObject loseUI;
 
     void Start()
     {
@@ -28,4 +30,21 @@ public class UIFollowCamera : MonoBehaviour
     {
         textMesh.text = text;
     }
+
+
+    public void ShowLose()
+    {
+        loseUI.SetActive(false);
+        gameObject.SetActive(true);
+        VRPlayerManager.Instance.ToggleRays(true);
+    }
+
+    public void ShowWin()
+    {
+        winUI.SetActive(true);
+        gameObject.SetActive(true);
+        VRPlayerManager.Instance.ToggleRays(true);
+    }
+
+
 }

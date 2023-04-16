@@ -9,7 +9,7 @@ public class MinigameFSM : MonoBehaviour
     [SerializeField] private MinigameState _startState;
     [SerializeField] private List<MinigameState> _minigameStates;
     [SerializeField] private GameObject hintGlowPrefab;
-    [SerializeField] private float _hintTimeInSeconds;
+   // [SerializeField] private float _hintTimeInSeconds;
     [SerializeField] private float _hintCooldown;
     [SerializeField] private bool _isClueOnCooldown;
     [SerializeField] private float _hintCooldownTimerMultiplier;
@@ -86,7 +86,7 @@ public class MinigameFSM : MonoBehaviour
 
     public void GetClue()
     {
-        if (!_isClueOnCooldown)//TODO:: if cooldown is done
+        if (!_isClueOnCooldown)
         {
             foreach (GameObject hintObj in _currentState.hintObjects)
             {
@@ -95,10 +95,6 @@ public class MinigameFSM : MonoBehaviour
                 obj.GetComponent<ObjectTracker>().SetTrackerObj(hintObj.transform);
                 obj.GetComponent<NetworkObject>().Spawn();
             }
-            //TODO:: Start cooldown and do something like:
-            // 
-            // NetworkProtocolManager.Instance.SetClueCooldownClientRpc(newcountdown);
-            //
             StartCoroutine(HintCooldown());
         }
         else
@@ -110,6 +106,7 @@ public class MinigameFSM : MonoBehaviour
     private IEnumerator HintCooldown()
     {
         _hintCooldown *= _hintCooldownTimerMultiplier;
+        NerworkProtocolManager.Instance.SetClueCooldownClientRpc(_hintCooldown);
         _isClueOnCooldown = true;
         yield return new WaitForSeconds(_hintCooldown);
         _isClueOnCooldown = false;

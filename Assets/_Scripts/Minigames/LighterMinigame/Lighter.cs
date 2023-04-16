@@ -1,23 +1,70 @@
+using Unity.Netcode;
 using UnityEngine;
 
 namespace _Scripts.Minigames.LighterMinigame
 {
-    public class Lighter : MonoBehaviour
+    public class Lighter : NetworkBehaviour
     {
         public bool _isLit = true;
+        NetworkVariable<bool> isLitNetwork = new();
+
         [SerializeField] float _threshold = 0.1f;
         [SerializeField] GameObject candleFlame;
         [SerializeField] ParticleSystem particlesystem;
-        [SerializeField] Animator animator;
+        //[SerializeField] Animator animator;
 
 
-        private void Light()
+        public override void OnNetworkSpawn()
+        {
+            if (IsServer)
+            {
+                isLitNetwork.Value = _isLit;
+            }
+            else
+            {
+                if (isLitNetwork.Value != _isLit)
+                {
+                    Debug.LogWarning($"NetworkVariable was {isLitNetwork.Value} upon being spawned" +
+                        $" when it should have been {_isLit}");
+                }
+                else
+                {
+                    Debug.Log($"NetworkVariable is {isLitNetwork.Value} when spawned.");
+                }
+                isLitNetwork.OnValueChanged += ValueChanged;
+            }
+        }
+
+        void ValueChanged(bool prev, bool current)
+        {
+            LightVisual(current);
+        }
+
+        public void LightVisual(bool pIsLit = true)
+        {
+            //shiny flamy stuffy
+
+            if (pIsLit)
+            {
+                candleFlame.SetActive(true);
+                particlesystem.Play();
+            }
+            else
+            {
+                candleFlame.SetActive(false);
+                particlesystem.Stop();
+            }
+        }
+
+
+        public void Light()
         {
             _isLit = true;
+            isLitNetwork.Value = _isLit;
             candleFlame.SetActive(true);
             particlesystem.Play();
-            animator.enabled = true;
-            animator.Play("fireLight");
+            //animator.enabled = true;
+            //animator.Play("fireLight");
         }
 
         public void MatchBoxExit()
@@ -34,9 +81,10 @@ namespace _Scripts.Minigames.LighterMinigame
         {
             if (!_isLit) return;
             _isLit = false;
+            isLitNetwork.Value = _isLit;
             candleFlame.SetActive(false);
             particlesystem.Stop();
-            animator.enabled = false;
+            //animator.enabled = false;
         }
     }
 }

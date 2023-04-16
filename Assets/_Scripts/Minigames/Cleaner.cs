@@ -15,7 +15,6 @@ public class Cleaner : MonoBehaviour
     {
         Physics.Raycast(transform.position, transform.forward, out RaycastHit raycast, rayDistance);
         if (raycast.collider == null) return;
-        Debug.Log("HIT");
         CleanableSurface cleanableSurface = raycast.collider.GetComponent<CleanableSurface>();
         if (cleanableSurface != null) cleanableSurface.CleanObject(raycast.textureCoord);
         //CleanObject(raycast.textureCoord);
