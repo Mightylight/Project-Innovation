@@ -19,14 +19,14 @@ public class DummyNetworkObject : MonoBehaviour
     [SerializeField] bool candleLit = false;
     void Start()
     {
-        Debug.Log("TEST?");
-
         if (NetworkManager.Singleton == null)
         {
+            Debug.Log("this happend");
             SceneManager.activeSceneChanged += ChangedActiveScene;
             return;
         }
         NetworkManager.Singleton.OnServerStarted += SpawnNetworkObject;
+        if(NetworkManager.Singleton.IsServer) SpawnNetworkObject();
     }
 
     void ChangedActiveScene(Scene current, Scene next)
