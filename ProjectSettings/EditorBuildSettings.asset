@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MobileDarkScene.unity
-    guid: 156083f1c3a0e46458444d86b082dd89
-  - enabled: 1
     path: Assets/Scenes/MobileScene.unity
     guid: 067dd41a89fdd2b43aa4e127fed9a877
   - enabled: 1
