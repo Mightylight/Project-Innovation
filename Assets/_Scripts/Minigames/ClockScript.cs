@@ -1,4 +1,5 @@
 using System;
+using Unity.Netcode;
 using UnityEngine;
 
 /// <summary>
@@ -68,7 +69,7 @@ public class ClockScript : MonoBehaviour
         
         if(timeElapsed.TotalMinutes > _gameTimeInMinutes)
         {
-            //Time is up
+            if (NetworkManager.Singleton.IsClient) return;
             Debug.Log("Time is up");
             GameManager.Instance.LoseGame();
             return;
