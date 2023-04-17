@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7661606060486357662}
   - component: {fileID: 7661606060486357663}
   - component: {fileID: 3275755664501237340}
+  - component: {fileID: 9090753941691849927}
   m_Layer: 8
   m_Name: Paper
   m_TagString: Untagged
@@ -393,6 +394,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &9090753941691849927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7661606060486357857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992b2943c8bc7a54aadb7c288eee7cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7661606059499179621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455,6 +468,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f17b16d0f1d153e4498a2c78bb494b30,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09315d94d29d634468b94c5a73dfbd85, type: 2}
     - target: {fileID: 919132149155446097, guid: f17b16d0f1d153e4498a2c78bb494b30,
         type: 3}
       propertyPath: m_Name

@@ -1,4 +1,5 @@
 using System;
+using Unity.Netcode;
 using UnityEngine;
 
 /// <summary>
@@ -32,11 +33,19 @@ public class ClockScript : MonoBehaviour
         DEGREES_PER_SECOND = 6f;
 
 
-    private void Awake()
+    public void StartClock()
     {
         _startingTime = new DateTime(2023, 12, 1, 11, 60 - _gameTimeInMinutes, 0);
         StartCount();
+        Debug.Log("CLOCK START");
     }
+
+
+    //private void Awake()
+    //{
+    //    _startingTime = new DateTime(2023, 12, 1, 11, 60 - _gameTimeInMinutes, 0);
+    //    StartCount();
+    //}
 
     private void StartCount()
     {
@@ -46,7 +55,9 @@ public class ClockScript : MonoBehaviour
 
     private void Update()
     {
-        if (!_isTimerActive) return;
+       // if (Input.GetKeyDown(KeyCode.C)) StartClock();
+
+            if (!_isTimerActive) return;
         UpdateContinuous();
     }
     
@@ -68,7 +79,7 @@ public class ClockScript : MonoBehaviour
         
         if(timeElapsed.TotalMinutes > _gameTimeInMinutes)
         {
-            //Time is up
+            if (NetworkManager.Singleton.IsClient) return;
             Debug.Log("Time is up");
             GameManager.Instance.LoseGame();
             return;
@@ -77,11 +88,11 @@ public class ClockScript : MonoBehaviour
         DateTime timeToDisplay = _startingTime + timeElapsed;
         
         _hoursTransform.localRotation =
-            Quaternion.Euler(0f, timeToDisplay.Hour * DEGREES_PER_HOUR, 0f);
+            Quaternion.Euler(0f, 0f,timeToDisplay.Hour * DEGREES_PER_HOUR);
         _minutesTransform.localRotation =
-            Quaternion.Euler(0f, timeToDisplay.Minute * DEGREES_PER_MINUTE, 0f);
+            Quaternion.Euler(0f, 0f,timeToDisplay.Minute * DEGREES_PER_MINUTE);
         _secondsTransform.localRotation =
-            Quaternion.Euler(0f, timeToDisplay.Second * DEGREES_PER_SECOND, 0f);
+            Quaternion.Euler(0f, 0f, timeToDisplay.Second * DEGREES_PER_SECOND);
 
         if (timeElapsed.Seconds > _timeLastFrame.Seconds)
         {

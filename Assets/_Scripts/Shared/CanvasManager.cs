@@ -71,7 +71,7 @@ public class CanvasManager : MonoBehaviour
         while(time > 0)
         {
             time--;
-            clueButtonText.text = $"{time}";
+            clueButtonText.text = $"{(int)time}";
            yield return new WaitForSeconds(1f);
         }
         clueButton.interactable = true;

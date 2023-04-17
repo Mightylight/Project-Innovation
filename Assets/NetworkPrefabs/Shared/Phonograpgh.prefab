@@ -267,7 +267,7 @@ MonoBehaviour:
     vinylPlateName: 0
   - music: {fileID: 8300000, guid: 77d00f1a54454264eaa6dcd978667f11, type: 3}
     vinylPlateName: 1
-  - music: {fileID: 8300000, guid: 77d00f1a54454264eaa6dcd978667f11, type: 3}
+  - music: {fileID: 8300000, guid: 96815b9dd66b93942b6ece1521478c1f, type: 3}
     vinylPlateName: 2
   - music: {fileID: 8300000, guid: 6212badb7fa9904418c1a6fd8d972feb, type: 3}
     vinylPlateName: 3

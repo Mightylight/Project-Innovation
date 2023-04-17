@@ -6,10 +6,11 @@ using UnityEngine;
 public class CorrectPlateManager : MonoBehaviour
 {
     [SerializeField] Material glowMat;
+    [SerializeField] Renderer render;
 
     private void Start()
     {
         if(NetworkManager.Singleton != null)
-            if(NetworkManager.Singleton.IsClient) this.GetComponent<Renderer>().material = glowMat;
+            if(NetworkManager.Singleton.IsClient) render.GetComponent<Renderer>().material = glowMat;
     }
 }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     private VRPlayerManager playerManager;
     [SerializeField] Transform vrPlayerSpawn;
+    [SerializeField] ClockScript clock;
     public static GameManager Instance
     {
         get
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
         playerManager.fadeEffect.FadeToTransparent();
         playerManager.transform.position = vrPlayerSpawn.position;
         playerManager.transform.rotation = vrPlayerSpawn.rotation;
-        //TODO: Start timer on clock!
+        clock.StartClock();
     }
 
     public void WinGame()
