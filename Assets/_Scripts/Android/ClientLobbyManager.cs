@@ -47,7 +47,7 @@ public class ClientLobbyManager : MonoBehaviour
     public void OnServerJoined(ulong clientID)
     {
         CanvasManager.Instance.PhoneConsoleMessage($" Connected as client with id {clientID}!");
-        CanvasManager.Instance.GetComponent<MobileCanvasFSM>().LoadState(MobileState.TUTORIAL);
+        CanvasManager.Instance.GetComponent<MobileCanvasFSM>().LoadState(MobileState.PLAYING);
     }
 
     public void OnClientDisconnected(ulong clientID)

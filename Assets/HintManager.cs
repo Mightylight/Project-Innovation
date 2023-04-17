@@ -15,8 +15,9 @@ public class HintManager : MonoBehaviour
 
     private void OnStateChanged(MinigameState pState)
     {
+        if (pState == null) return;
         if (pState._paperMaterial == null) return;
         
-        gameObject.GetComponent<Renderer>().material = pState._paperMaterial;
+        gameObject.GetComponentInChildren<Renderer>().material = pState._paperMaterial;
     }
 }

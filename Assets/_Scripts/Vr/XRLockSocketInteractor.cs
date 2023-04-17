@@ -26,7 +26,7 @@ namespace UnityEngine.XR.Content.Interaction
         {
             if (!base.CanHover(interactable))
                 return false;
-
+            Debug.Log("HOVER TEST" + m_Lock.CanUnlock(interactable.transform.gameObject));
             return m_Lock.CanUnlock(interactable.transform.gameObject);
         }
 
@@ -35,7 +35,7 @@ namespace UnityEngine.XR.Content.Interaction
         {
             if (!base.CanSelect(interactable))
                 return false;
-
+            //Debug.Log("SELECT TEST" + m_Lock.CanUnlock(interactable.transform.gameObject));
             return m_Lock.CanUnlock(interactable.transform.gameObject);
         }
     }
