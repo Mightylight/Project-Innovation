@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class MinigameFSM : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class MinigameFSM : MonoBehaviour
     [SerializeField] private float _hintCooldown;
     [SerializeField] private bool _isClueOnCooldown;
     [SerializeField] private float _hintCooldownTimerMultiplier;
+
+    //make an event OnStateChanged
+    public event Action<MinigameState> OnStateChanged;
 
 
 
@@ -82,6 +87,7 @@ public class MinigameFSM : MonoBehaviour
             _currentState = pMinigameState;
             _currentState.OnStateEnter();
         }
+        OnStateChanged.Invoke(_currentState);
     }
 
     public void GetClue()
