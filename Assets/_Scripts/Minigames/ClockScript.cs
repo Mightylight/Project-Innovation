@@ -13,11 +13,18 @@ public class ClockScript : MonoBehaviour
     
     [SerializeField] private int _gameTimeInMinutes;
     [SerializeField] private int _checkpointTimeInMinutes;
+
+    [SerializeField] private AudioSource _clockTickAudioSource;
+    [SerializeField] private AudioSource _clockCheckpointAudioSource;
+    
+    
+    
     
     private DateTime _startTime;
     private DateTime _startingTime;
     private bool _isTimerActive;
     private bool _hasReachedCheckpoint;
+    private TimeSpan _timeLastFrame;
 
     const float
         DEGREES_PER_HOUR = 30f,
@@ -49,10 +56,13 @@ public class ClockScript : MonoBehaviour
         DateTime time = DateTime.Now;
         
         TimeSpan timeElapsed = time - _startTime;
+
         if(timeElapsed.TotalMinutes > _checkpointTimeInMinutes && !_hasReachedCheckpoint)
         {
             //Checkpoint reached
             Debug.Log("Checkpoint reached");
+            //Place almost out of time sound
+            _clockCheckpointAudioSource.Play();
             _hasReachedCheckpoint = true;
         }
         
@@ -60,6 +70,7 @@ public class ClockScript : MonoBehaviour
         {
             //Time is up
             Debug.Log("Time is up");
+            GameManager.Instance.LoseGame();
             return;
         }
         
@@ -71,5 +82,13 @@ public class ClockScript : MonoBehaviour
             Quaternion.Euler(0f, timeToDisplay.Minute * DEGREES_PER_MINUTE, 0f);
         _secondsTransform.localRotation =
             Quaternion.Euler(0f, timeToDisplay.Second * DEGREES_PER_SECOND, 0f);
+
+        if (timeElapsed.Seconds > _timeLastFrame.Seconds)
+        {
+            //play tick sound
+            _clockTickAudioSource.Play();
+        }
+        
+        _timeLastFrame = timeElapsed;
     }
 }
