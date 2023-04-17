@@ -45,12 +45,18 @@ public class MinigameFSM : MonoBehaviour
         private set => _currentState = value;
     }
 
-    private void Start()
+    private void Awake()
     {
         if (_instance == null)
         {
             _instance = this;
         }
+        else Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+
         _minigameStates = GetComponentsInChildren<MinigameState>().ToList();
         NextState();
     }

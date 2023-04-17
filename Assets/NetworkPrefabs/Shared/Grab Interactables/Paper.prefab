@@ -406,7 +406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992b2943c8bc7a54aadb7c288eee7cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paper: {fileID: 7661606060486357857}
 --- !u!1001 &7661606059499179621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -473,7 +472,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 75885bb1382784242b472a973ba0d819, type: 2}
+      objectReference: {fileID: 2100000, guid: 09315d94d29d634468b94c5a73dfbd85, type: 2}
     - target: {fileID: 919132149155446097, guid: f17b16d0f1d153e4498a2c78bb494b30,
         type: 3}
       propertyPath: m_Name
