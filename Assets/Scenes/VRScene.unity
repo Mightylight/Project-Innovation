@@ -13054,6 +13054,7 @@ MonoBehaviour:
   - {fileID: 1087981639}
   _timeInSeconds: 0
   _paperMaterial: {fileID: 2100000, guid: 282108e19647ce4478f1c73cc628c986, type: 2}
+  speechRecognizer: {fileID: 0}
 --- !u!114 &1318399758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13565,12 +13566,14 @@ MonoBehaviour:
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
     - Override: 0
-      Prefab: {fileID: 0}
+      Prefab: {fileID: 5865562026014835796, guid: 41bbe59ddd7c1a74b8166f7e01c1ad32,
+        type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
     - Override: 0
-      Prefab: {fileID: 0}
+      Prefab: {fileID: 6957800938272457974, guid: 68f5bbc40b74277468df6046e7a8328e,
+        type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
